@@ -274,24 +274,34 @@ namespace Swiss_Selector
             }
             if (file == "carsPath")
             {
-                string path = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
-                //string path = @"D:\Steam\steamapps\common\Car Mechanic Simulator 2018\cms2018_Data\Managed";
-                carsPath = Path.GetFullPath(Path.Combine(path, @"..\..\..\..\..\"));               
-
-                if (Directory.Exists(carsPath))
+                try
                 {
-                    DirectoryInfo dinfo = new DirectoryInfo(carsPath);
-                    FileInfo[] Files = dinfo.GetFiles("*.cms", SearchOption.AllDirectories);
-                    if (Files.Length != 0)
+                    string path = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
+                    //string path = @"D:\Steam\steamapps\common\Car Mechanic Simulator 2018\cms2018_Data\Managed";
+                    carsPath = Path.GetFullPath(Path.Combine(path, @"..\..\..\..\..\"));               
+
+                    if (Directory.Exists(carsPath))
                     {
-                        Writeini("carsPath", carsPath, savePath);
-                        AppendLine(textBox1, "Path to Cars Set Successfully..."); 
+                        DirectoryInfo dinfo = new DirectoryInfo(carsPath);
+                        FileInfo[] Files = dinfo.GetFiles("*.cms", SearchOption.AllDirectories);
+                        if (Files.Length != 0)
+                        {
+                            Writeini("carsPath", carsPath, savePath);
+                            AppendLine(textBox1, "Path to Cars Set Successfully..."); 
+                        }
+                        else
+                        {
+                            return;
+                        }                    
                     }
-                    else
-                    {
-                        return;
-                    }                    
-                }                
+                }
+                catch //(Exception ex)
+                {
+                    AppendLine(textBox1, "Please set Cars directory manually, Swiss Selector not in \\Managed  folder...");
+                    checker = 1;
+                    //MessageBox.Show(ex.Message + "\r\n\r\nini File Corrupted! Rebuild ini files!");
+                    return;
+                }
             }            
         }        
         public void ReloadSave()
