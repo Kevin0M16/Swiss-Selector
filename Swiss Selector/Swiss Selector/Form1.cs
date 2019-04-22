@@ -228,9 +228,9 @@ namespace Swiss_Selector
             {
                 File.Create(savePath).Close();
                 TextWriter tw = new StreamWriter(savePath);
-                tw.WriteLine("swissPath=D:\\Steam\\steamapps\\common\\Car Mechanic Simulator 2018\\cms2018_Data\\Managed\\swiss.ini1");
-                tw.WriteLine("keysPath=D:\\Steam\\steamapps\\common\\Car Mechanic Simulator 2018\\cms2018_Data\\Managed\\keys.ini1");
-                tw.WriteLine("carsPath=D:\\Steam1");
+                tw.WriteLine("swissPath=D:\\Steam\\steamapps\\common\\Car Mechanic Simulator 2018\\cms2018_Data\\Managed\\swiss.ini");
+                tw.WriteLine("keysPath=D:\\Steam\\steamapps\\common\\Car Mechanic Simulator 2018\\cms2018_Data\\Managed\\keys.ini");
+                tw.WriteLine("carsPath=D:\\Steam");
                 tw.Close();                
             }
             else if (File.Exists(savePath))
