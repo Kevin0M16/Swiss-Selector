@@ -26,6 +26,7 @@ namespace Swiss_Selector
             else
             {
                 AppendLine(textBox1, "Swiss Selector loaded but with ERRORS! read log! Code: " + checker);
+
             }            
         }
         private void StartUp()
@@ -333,7 +334,7 @@ namespace Swiss_Selector
             }
             else
             {                
-                AppendLine(textBox1, "Cars Not Found!");
+                AppendLine(textBox1, "Path to cars not found!");
                 LookForDefaults("carsPath");                
                 LoadCars();
             }
@@ -410,7 +411,7 @@ namespace Swiss_Selector
                     return;
                 }
             }
-            catch //(Exception ex)
+            catch
             {
                 AppendLine(textBox1, "ini File Corrupted! See Log!");
                 checker = 1;                
@@ -572,29 +573,38 @@ namespace Swiss_Selector
             else if (!File.Exists(keysPath))
             {
                 listBox5.Items.Clear();
-                AppendLine(textBox1, "Error File not found!");
+                AppendLine(textBox1, "Error keys.ini file not found!");
                 return;
             }            
         }
         private void WriteCar(string key, string newKey, string path)
         {
-            if (File.Exists(path))
-            {
-                
-                string[] array = File.ReadAllLines(path).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();                
-
-                for (int i = 0; i < array.Length; i++)
+            try
+            {            
+                if (File.Exists(path))
                 {
-                    string a = array[i].Substring(0, array[i].IndexOf("="));
-                    string s = array[i].Substring(array[i].IndexOf("=") + 1);
-                    if (a == key)
-                    {
-                        string text = File.ReadAllText(path);
-                        text = text.Replace(s, newKey);
-                        File.WriteAllText(path, text);
-                    }
+                
+                    string[] array = File.ReadAllLines(path).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();                
 
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        string a = array[i].Substring(0, array[i].IndexOf("="));
+                        string s = array[i].Substring(array[i].IndexOf("=") + 1);
+                        if (a == key)
+                        {
+                            string text = File.ReadAllText(path);
+                            text = text.Replace(s, newKey);
+                            File.WriteAllText(path, text);
+                        }
+
+                    }
+                    return;
                 }
+            }
+            catch
+            {
+                AppendLine(textBox1, "Error swiss.ini File Corrupted! See Log!");
+                checker = 1;
                 return;
             }
         }
@@ -659,7 +669,7 @@ namespace Swiss_Selector
                     return;
                 }
             }
-            catch //(Exception ex)
+            catch
             {
                 AppendLine(textBox1, "ini File Corrupted! See Log!");
                 checker = 1;
@@ -685,7 +695,7 @@ namespace Swiss_Selector
             }
             else
             {
-                AppendLine(textBox1, "Error File not found!");
+                AppendLine(textBox1, "Error swiss.ini file not found!");
             }
             
             listBox3.Items.Clear();
@@ -899,29 +909,86 @@ namespace Swiss_Selector
             listBox3.Items.Clear();
             ModName2(listBox3, swissPath);
         }
+        private void ClearNums()
+        {   
+            numericUpDown1.Value = 0;
+            numericUpDown2.Value = 0;
+            numericUpDown3.Value = 0;
+            numericUpDown4.Value = 0;
+            numericUpDown5.Value = 0;
+            numericUpDown6.Value = 0;
+        }
         private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            WriteNum("addMoneyAmount", numericUpDown1);
+            if (File.Exists(swissPath))
+            {
+                WriteNum("addMoneyAmount", numericUpDown1);
+                AppendLine(textBox1, "Add money amount updated...");
+            }
+            else
+            {
+                ClearNums();
+            }               
         }
         private void NumericUpDown2_ValueChanged(object sender, EventArgs e)
         {
-            WriteNum("quality", numericUpDown2);
+            if (File.Exists(swissPath))
+            {
+                WriteNum("quality", numericUpDown2);
+                AppendLine(textBox1, "Set quality amount updated...");
+            }
+            else
+            {
+                ClearNums();
+            }
         }
         private void NumericUpDown3_ValueChanged(object sender, EventArgs e)
         {
-            WriteNum("mileage", numericUpDown3);
+            if (File.Exists(swissPath))
+            {
+                WriteNum("mileage", numericUpDown3);
+                AppendLine(textBox1, "Set Mileage number updated...");
+            }
+            else
+            {
+                ClearNums();
+            }
         }
         private void NumericUpDown4_ValueChanged(object sender, EventArgs e)
-        {            
-            WriteNum("condition", numericUpDown4);
+        {
+            if (File.Exists(swissPath))
+            {
+                WriteNum("condition", numericUpDown4);
+                AppendLine(textBox1, "Condition percent updated...");
+            }
+            else
+            {
+                ClearNums();
+            }
         }
         private void NumericUpDown5_ValueChanged(object sender, EventArgs e)
-        {            
-            WriteNum("addXPAmount", numericUpDown5);
+        {
+            if (File.Exists(swissPath))
+            {
+                WriteNum("addXPAmount", numericUpDown5);
+                AppendLine(textBox1, "Add XP amount updated...");
+            }
+            else
+            {
+                ClearNums();
+            }
         }
         private void NumericUpDown6_ValueChanged(object sender, EventArgs e)
         {
-            WriteNum("setMoneyAmount", numericUpDown6);
+            if (File.Exists(swissPath))
+            {
+                WriteNum("setMoneyAmount", numericUpDown6);
+                AppendLine(textBox1, "Set money amount updated...");
+            }
+            else
+            {
+                ClearNums();
+            }
         }
         private void DontOpenInvToolStripMenuItem_Click(object sender, EventArgs e)
         {
