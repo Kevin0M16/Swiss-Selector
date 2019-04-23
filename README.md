@@ -11,7 +11,8 @@ CMS 2018 Mod
 //Run Swiss Selector.exe<br />
 //Click Tools\build swiss.ini to create a new swiss.ini file  -note: if a swiss.ini exits, it will be overwritten!!<br />
 //Click Tools\build keys.ini to create a new keys.ini file<br />
-//if the car names have populated, then tool is ready. If car names listbox is empty, click Advanced\manually select cars location and
-Select your root directory of all your car files.<br />
-//Now you can select option and Open CMS 2018. Action keys are listed on Main Form.<br />
+//Check if the car names have populated on the left. If car names listbox is empty, click Advanced\manually select cars location and Select your root directory of all your car files.<br />
+//Now you can select your car to spawn, money and xp amounts, and key mapping. Be sure to save your key bindings!<br />
+//Leave Swiss Selector Open and then Open CMS 2018. Action keys are listed on Main Form.<br />
 //Enjoy!<br />
+
