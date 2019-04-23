@@ -515,7 +515,7 @@ namespace Swiss_Selector
                 }
                 catch //(Exception ex)
                 {
-                    AppendLine(textBox1, "Cars path problem! Restart!");
+                    AppendLine(textBox1, "Cars path problem!");
                     checker = 1;
                     //MessageBox.Show(ex.Message + "\r\n\r\nini File Corrupted! Rebuild ini files!");
                     return;                    
