@@ -298,7 +298,8 @@ namespace Swiss_Selector
                 catch
                 {
                     AppendLine(textBox1, "Please set Cars directory manually, Swiss Selector not in \\Managed  folder...");                    
-                    checker = 1;                    
+                    checker = 1;
+                    //test
                     return;
                 }
             }            
