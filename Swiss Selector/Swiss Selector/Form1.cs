@@ -14,8 +14,7 @@ namespace Swiss_Selector
     {     
         public Form1()
         {             
-            InitializeComponent();
-            //StartUp();
+            InitializeComponent();            
         }
         private void Form1_Shown(object sender, EventArgs e)
         {            
@@ -247,8 +246,7 @@ namespace Swiss_Selector
                 string path = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
                 keysPath = Path.GetFullPath(path + @"\keys.ini");
                 if (File.Exists(keysPath))
-                {
-                    //AppendLine(textBox1, "Path to keys.ini found...");
+                {                    
                     Writeini("keysPath", keysPath, savePath);
                     AppendLine(textBox1, "Path to keys.ini Set Successfully...");  
                 }
@@ -262,8 +260,7 @@ namespace Swiss_Selector
                 string path = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
                 swissPath = Path.GetFullPath(path + @"\swiss.ini");
                 if (File.Exists(swissPath))
-                {
-                    //AppendLine(textBox1, "Path to swiss.ini found...");
+                {                    
                     Writeini("swissPath", swissPath, savePath);
                     AppendLine(textBox1, "Path to swiss.ini Set Successfully...");
                 }
@@ -388,11 +385,10 @@ namespace Swiss_Selector
                     return;
                 }                
             }
-            catch //(Exception ex)
+            catch
             {
                     AppendLine(textBox1, "ini File Corrupted! See Log!");
-                    checker = 1;
-                    //MessageBox.Show(ex.Message + "\r\n\r\nini File Corrupted! Rebuild ini files!");
+                    checker = 1;                    
                     return;
             }
         }
@@ -417,8 +413,7 @@ namespace Swiss_Selector
             catch //(Exception ex)
             {
                 AppendLine(textBox1, "ini File Corrupted! See Log!");
-                checker = 1;
-                //MessageBox.Show(ex.Message + "\r\n\r\nini File Corrupted! Rebuild ini files!");
+                checker = 1;                
                 return;
             }            
         }
@@ -441,11 +436,10 @@ namespace Swiss_Selector
                     return;
                 }
             }
-            catch //(Exception ex)
+            catch
             {
                 AppendLine(textBox1, "keys.ini File Corrupted! Rebuild key.ini file!");
-                checker = 1;
-                //MessageBox.Show(ex.Message + "\r\n\r\nini File Corrupted! Rebuild ini files!");
+                checker = 1;                
                 return;
             }            
         }
@@ -513,11 +507,10 @@ namespace Swiss_Selector
                         return;
                     }
                 }
-                catch //(Exception ex)
+                catch
                 {
                     AppendLine(textBox1, "Cars path problem!");
                     checker = 1;
-                    //MessageBox.Show(ex.Message + "\r\n\r\nini File Corrupted! Rebuild ini files!");
                     return;                    
                 }
             }
@@ -637,11 +630,10 @@ namespace Swiss_Selector
                     AppendLine(textBox1, "Error File not found!");
                 } 
             }
-            catch //(Exception ex)
+            catch
             {
                 AppendLine(textBox1, "ini File Corrupted! See Log!");
                 checker = 1;
-                //MessageBox.Show(ex.Message + "\r\n\r\nini File Corrupted! Rebuild ini files!");
                 return;
             }                       
         }
@@ -671,7 +663,6 @@ namespace Swiss_Selector
             {
                 AppendLine(textBox1, "ini File Corrupted! See Log!");
                 checker = 1;
-                //MessageBox.Show(ex.Message + "\r\n\r\nini File Corrupted! Rebuild ini files!");
                 return;
             }            
         }
@@ -825,8 +816,7 @@ namespace Swiss_Selector
                 return;
             }
             ClearBoxes();            
-            LoadIni();
-            //LoadCars();
+            LoadIni();            
         }
         private void LoadCars()
         {
@@ -894,11 +884,10 @@ namespace Swiss_Selector
                     return;
                 }
             }
-            catch //(Exception ex)
+            catch
             {
                 AppendLine(textBox1, "swiss.ini File Corrupted! Rebuild swiss.ini file!");
                 checker = 1;
-                //MessageBox.Show(ex.Message + "\r\n\r\nini File Corrupted! Rebuild ini files!");
                 return;
             }            
         }
