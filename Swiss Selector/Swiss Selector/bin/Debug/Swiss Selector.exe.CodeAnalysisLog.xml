@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2019\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="16.0">
  <Targets>
-  <Target Name="C:\Users\Kevin\source\repos\Swiss Selector\Swiss Selector\bin\Debug\Swiss Selector.exe">
+  <Target Name="C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\bin\Debug\Swiss Selector.exe">
    <Modules>
     <Module Name="swiss selector.exe">
      <Namespaces>
@@ -12,7 +12,7 @@
          <Members>
           <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Assembly" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="ExcludedInSource" Created="2019-04-22 02:54:39Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
+            <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="ExcludedInSource" Created="2019-04-23 03:24:25Z" FixCategory="NonBreaking" LastSeen="0001-01-01 00:00:00Z" />
            </Messages>
           </Member>
          </Members>

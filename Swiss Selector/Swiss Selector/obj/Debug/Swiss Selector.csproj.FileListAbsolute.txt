@@ -21,3 +21,15 @@ C:\Users\Kevin Lozano\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss
 C:\Users\Kevin Lozano\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\obj\Debug\Swiss Selector.csproj.CoreCompileInputs.cache
 C:\Users\Kevin Lozano\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\obj\Debug\Swiss Selector.exe
 C:\Users\Kevin Lozano\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\obj\Debug\Swiss Selector.pdb
+C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\bin\Debug\Swiss Selector.exe.config
+C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\bin\Debug\Swiss Selector.exe
+C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\bin\Debug\Swiss Selector.pdb
+C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\obj\Debug\Swiss_Selector.About.resources
+C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\obj\Debug\Swiss_Selector.Form1.resources
+C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\obj\Debug\Swiss_Selector.Properties.Resources.resources
+C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\obj\Debug\Swiss Selector.csproj.GenerateResource.cache
+C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\obj\Debug\Swiss Selector.csproj.CoreCompileInputs.cache
+C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\obj\Debug\Swiss Selector.exe
+C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\obj\Debug\Swiss Selector.pdb
+C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\bin\Debug\Swiss Selector.exe.CodeAnalysisLog.xml
+C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\bin\Debug\Swiss Selector.exe.lastcodeanalysissucceeded

@@ -295,11 +295,10 @@ namespace Swiss_Selector
                         }                    
                     }
                 }
-                catch //(Exception ex)
+                catch
                 {
                     AppendLine(textBox1, "Please set Cars directory manually, Swiss Selector not in \\Managed  folder...");
-                    checker = 1;
-                    //MessageBox.Show(ex.Message + "\r\n\r\nini File Corrupted! Rebuild ini files!");
+                    checker = 1;                    
                     return;
                 }
             }            
