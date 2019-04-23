@@ -31,5 +31,4 @@ C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Select
 C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\obj\Debug\Swiss Selector.csproj.CoreCompileInputs.cache
 C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\obj\Debug\Swiss Selector.exe
 C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\obj\Debug\Swiss Selector.pdb
-C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\bin\Debug\Swiss Selector.exe.CodeAnalysisLog.xml
-C:\Users\Kevin\Source\Repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\bin\Debug\Swiss Selector.exe.lastcodeanalysissucceeded
+C:\Users\Kevin\source\repos\Kevin0M16\Swiss-Selector\Swiss Selector\Swiss Selector\obj\Debug\Swiss Selector.csprojAssemblyReference.cache

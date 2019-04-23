@@ -345,19 +345,19 @@ namespace Swiss_Selector
                 Read("showInventory", swissPath);
                 if (currentKey == "true")
                 {
-                    openShopToolStripMenuItem.Checked = true;
-                    dontOpenShopToolStripMenuItem.Checked = false;
+                    openInvToolStripMenuItem.Checked = true;
+                    dontOpenInvToolStripMenuItem.Checked = false;
                 }
                 else
                 {
-                    openShopToolStripMenuItem.Checked = false;
-                    dontOpenShopToolStripMenuItem.Checked = true;
+                    openInvToolStripMenuItem.Checked = false;
+                    dontOpenInvToolStripMenuItem.Checked = true;
                 }
             }
             else if(!File.Exists(swissPath))
             {
-                openShopToolStripMenuItem.Checked = false;
-                dontOpenShopToolStripMenuItem.Checked = false;
+                openInvToolStripMenuItem.Checked = false;
+                dontOpenInvToolStripMenuItem.Checked = false;
                 
             }
         }
@@ -923,34 +923,34 @@ namespace Swiss_Selector
         {
             WriteNum("setMoneyAmount", numericUpDown6);
         }
-        private void DontOpenShopToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DontOpenInvToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (File.Exists(swissPath))
             {
-                openShopToolStripMenuItem.Checked = false;
-                dontOpenShopToolStripMenuItem.Checked = true;
+                openInvToolStripMenuItem.Checked = false;
+                dontOpenInvToolStripMenuItem.Checked = true;
                 Writeini("showInventory", "false", swissPath);
                 listBox3.Items.Clear();
                 ModName2(listBox3, swissPath);
             }
             else
             {
-                dontOpenShopToolStripMenuItem.Checked = false;
+                dontOpenInvToolStripMenuItem.Checked = false;
             }
         }
-        private void OpenShopToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenInvToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (File.Exists(swissPath))
             {
-                dontOpenShopToolStripMenuItem.Checked = false;
-                openShopToolStripMenuItem.Checked = true;
+                dontOpenInvToolStripMenuItem.Checked = false;
+                openInvToolStripMenuItem.Checked = true;
                 Writeini("showInventory", "true", swissPath);
                 listBox3.Items.Clear();
                 ModName2(listBox3, swissPath);
             }
             else
             {
-                openShopToolStripMenuItem.Checked = false;
+                openInvToolStripMenuItem.Checked = false;
             }
         } 
         private void ManuallySetCarFolderToolStripMenuItem_Click(object sender, EventArgs e)
