@@ -44,9 +44,10 @@ namespace Swiss_Selector
         }
         public void BuildiniFile(string ini)
         {
+            string path = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
             if (ini == swissPath)
             {
-                if (!File.Exists(ini) && File.Exists(@"\Assembly-CSharp-firstpass.dll"))
+                if (!File.Exists(ini) && File.Exists(path + @"\Assembly-CSharp-firstpass.dll"))
                 {
                     DialogResult dialogResult = MessageBox.Show("No swiss.ini exits. Create file?", "swiss.ini Creator", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
@@ -81,7 +82,7 @@ namespace Swiss_Selector
                         return;
                     }
                 }
-                else if (File.Exists(ini) && File.Exists(@"\Assembly-CSharp-firstpass.dll"))
+                else if (File.Exists(ini) && File.Exists(path + @"\Assembly-CSharp-firstpass.dll"))
                 {
                     DialogResult dialogResult1 = MessageBox.Show("swiss.ini already exits. Overwrite?", "swiss.ini Creator", MessageBoxButtons.YesNo);
                     if (dialogResult1 == DialogResult.Yes)
@@ -118,7 +119,7 @@ namespace Swiss_Selector
             }
             if (ini == keysPath)
             {
-                if (!File.Exists(ini) && File.Exists(@"\Assembly-CSharp-firstpass.dll"))
+                if (!File.Exists(ini) && File.Exists(path + @"\Assembly-CSharp-firstpass.dll"))
                 {
                     DialogResult dialogResult2 = MessageBox.Show("No keys.ini exits. Create file?", "keys.ini Creator", MessageBoxButtons.YesNo);
                     if (dialogResult2 == DialogResult.Yes)
@@ -170,7 +171,7 @@ namespace Swiss_Selector
                     }
                     
                 }
-                else if (File.Exists(ini) && File.Exists(@"\Assembly-CSharp-firstpass.dll"))
+                else if (File.Exists(ini) && File.Exists(path + @"\Assembly-CSharp-firstpass.dll"))
                 {
                     DialogResult dialogResult3 = MessageBox.Show("keys.ini already exits. Overwrite?", "keys.ini Creator", MessageBoxButtons.YesNo);
                     if (dialogResult3 == DialogResult.Yes)
@@ -221,7 +222,7 @@ namespace Swiss_Selector
                     }
                 }
             }
-            if (!File.Exists(@"\Assembly-CSharp-firstpass.dll"))
+            if (!File.Exists(path + @"\Assembly-CSharp-firstpass.dll"))
             {
                 DialogResult dialogResult4 = MessageBox.Show("Swiss Selector not in \\Managed folder, Would you like to manually select \\Managed location?", "Message", MessageBoxButtons.YesNo);
                 if (dialogResult4 == DialogResult.Yes)
