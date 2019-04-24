@@ -227,7 +227,8 @@ namespace Swiss_Selector
                 DialogResult dialogResult4 = MessageBox.Show("Swiss Selector not in \\Managed folder, Would you like to manually select \\Managed location?", "Message", MessageBoxButtons.YesNo);
                 if (dialogResult4 == DialogResult.Yes)
                 {
-                    Selectini();
+                    //Selectini();
+                    SelectiniFolder();
                 }
                 else
                 {
@@ -825,6 +826,47 @@ namespace Swiss_Selector
             listBox4.Items.Clear();
             listBox5.Items.Clear();
         }
+        private void SelectiniFolder()
+        {
+            try
+            {
+                using (var fbd = new FolderBrowserDialog())
+                {
+                    DialogResult result = fbd.ShowDialog();
+
+                    if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+                    {
+                        string[] files = Directory.GetFiles(fbd.SelectedPath, "Assembly-CSharp-firstpass.dll");
+                        string[] files2 = Directory.GetFiles(fbd.SelectedPath, "keys.ini");
+                        string[] files3 = Directory.GetFiles(fbd.SelectedPath, "swiss.ini");
+
+                        if (files.Length != 0)
+                        {
+                            keysPath = (fbd.SelectedPath + @"\keys.ini");
+                            AppendLine(textBox1, "Path to keys.ini Set Successfully...");
+                            swissPath = (fbd.SelectedPath + @"\swiss.ini");                            
+                            AppendLine(textBox1, "Path to swiss.ini Set Successfully...");
+                            MessageBox.Show("ini files Path Set Successfully...\r\n\r\n Now close and move Swiss Selector to \\Managed directory", "Message");                            
+                        }
+                        else
+                        {
+                            MessageBox.Show("ini files have to be built in \\Managed directory", "Message");
+                        }
+                    }
+                    else if (result == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("Cancelled no path set!");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\r\n\r\n ini path problem!");
+                checker = 1;
+                return;
+            }
+        }
+    
         private void Selectini()
         {
             IniPath("*.ini");
