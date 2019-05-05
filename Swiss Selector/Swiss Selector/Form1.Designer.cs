@@ -1469,8 +1469,8 @@ namespace Swiss_Selector
             // selectiniLocationToolStripMenuItem
             // 
             this.selectiniLocationToolStripMenuItem.Name = "selectiniLocationToolStripMenuItem";
-            this.selectiniLocationToolStripMenuItem.Size = new System.Drawing.Size(294, 24);
-            this.selectiniLocationToolStripMenuItem.Text = "Select existing ini Files location...";
+            this.selectiniLocationToolStripMenuItem.Size = new System.Drawing.Size(298, 24);
+            this.selectiniLocationToolStripMenuItem.Text = "Select \\Managed folder location...";
             this.selectiniLocationToolStripMenuItem.Click += new System.EventHandler(this.SelectiniLocationToolStripMenuItem_Click);
             // 
             // preferencesToolStripMenuItem
@@ -1772,16 +1772,17 @@ namespace Swiss_Selector
         //private string imageLocation;
         //private string newestKey;
         public int checker;
-        public List<string> mods;
+        //public List<string> mods;
         private string currentKey;
         private string savePath;        
         private string ChosenPath;
-        public string iniFiles;
+        public string dllPath;
+        //public string iniFiles;
         public string keysPath;
         public string swissPath;
         public string carsPath;        
-        public string ModCarsPath;
-        public string ModFunction;        
+        //public string ModCarsPath;
+        //public string ModFunction;        
         public string IncreaseConfig;
         public string DecreaseConfig;
         public string RandomChangeCondition;
