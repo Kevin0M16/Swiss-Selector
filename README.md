@@ -3,6 +3,8 @@
 # Swiss-Selector
 CMS 2018 Mod
 
+<i>Update to 1.1 -- added small image preview of mod cars</i><br />
+
 //Backup your Managed Folder:  Steam\steamapps\common\Car Mechanic Simulator 2018\cms2018_Data\Managed<br />
 //Backup your saves folder: User\AppData\LocalLow\Red Dot Games\Car Mechanic Simulator 2018<br />
 //Backup your dll file: Assembly-CSharp-firstpass.dll in the \Managed Folder<br />
