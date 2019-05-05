@@ -17,7 +17,7 @@ namespace Swiss_Selector
             InitializeComponent();            
         }
         private void Form1_Shown(object sender, EventArgs e)
-        {            
+        {
             StartUp();
             if (checker == 0)
             {
@@ -27,7 +27,7 @@ namespace Swiss_Selector
             {
                 AppendLine(textBox1, "Swiss Selector loaded but with ERRORS! read log! Code: " + checker);
 
-            }            
+            }
         }
         private void StartUp()
         {
@@ -345,7 +345,8 @@ namespace Swiss_Selector
             }
             if (Directory.Exists(carsPath))
             {               
-                LoadCars();     
+                LoadCars();
+                LoadPng();
             }
             else
             {                
@@ -701,12 +702,16 @@ namespace Swiss_Selector
             }
         }
         private void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {     
+        {
             object selecteditem = listBox1.SelectedItem;
             string carname = selecteditem.ToString();
+            string carpng = carname + "-" + carname + ".png";
+
             if (File.Exists(swissPath))
             {
+                GetPNG(carpng);
                 WriteCar("car", carname, swissPath);
+                AppendLine(textBox1, "Car updated...");
             }
             else
             {
@@ -791,24 +796,6 @@ namespace Swiss_Selector
                 return;
             }
         }
-        private void SaveFileIni(string ininame, string ininame2, string inipath, string inipath2)
-        {            
-            if (!File.Exists(savePath))
-            {
-                File.Create(savePath).Close();
-                TextWriter tw = new StreamWriter(savePath);
-                tw.WriteLine(ininame + "=" + inipath);
-                tw.WriteLine(ininame2 + "=" + inipath2);
-                tw.Close();
-            }
-            else if (File.Exists(savePath))
-            {
-                TextWriter tw = new StreamWriter(savePath);
-                tw.WriteLine(ininame + "=" + inipath);
-                tw.WriteLine(ininame2 + "=" + inipath2);
-                tw.Close();                
-            }
-        }
         private void ClearSwissBoxes()
         {
             listBox2.Items.Clear();
@@ -865,8 +852,7 @@ namespace Swiss_Selector
                 checker = 1;
                 return;
             }
-        }
-    
+        }    
         private void Selectini()
         {
             IniPath("*.ini");
@@ -900,6 +886,24 @@ namespace Swiss_Selector
         private void SelectiniLocationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Selectini();               
+        }
+        private void LoadPng()
+        {
+            Read("car", swissPath);
+            int index = listBox1.FindString(currentKey);            
+            if (index != -1)
+            {
+                listBox1.SetSelected(index, true);
+                object selecteditem = listBox1.SelectedItem;
+                string carname = selecteditem.ToString();
+                string carpng = carname + "-" + carname + ".png";
+                GetPNG(carpng);
+            }
+            else
+            {
+                return;
+            }
+            
         }
         private void LoadCars()
         {
@@ -1108,6 +1112,7 @@ namespace Swiss_Selector
                 AppendLine(textBox1, "Path to Cars Set Successfully...");
                 listBox1.Items.Clear();
                 LoadCars();
+                LoadPng();
             }
         }
         private void BuildIniFilesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1128,6 +1133,43 @@ namespace Swiss_Selector
         {
             About About = new About();
             About.Show();
+        }
+        private void GetPNG(string picname)
+        {
+            if (!Directory.Exists(carsPath))
+            {               
+                return;
+            }
+            else
+            {
+                try
+                {
+                    DirectoryInfo dinfo = new DirectoryInfo(carsPath);
+                    FileInfo[] Files = dinfo.GetFiles(picname, SearchOption.AllDirectories);
+                    if (Files.Length != 0)
+                    {                        
+                        foreach (FileInfo file in Files)
+                        {
+                            string pngPath = file.FullName;
+                            //AppendLine(textBox1, pngPath);
+
+                            pictureBox1.ImageLocation = pngPath;
+                            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                        }                        
+                    }
+                    else
+                    {                        
+                        pictureBox1.Image = null;
+                        return;
+                    }
+                }
+                catch
+                {
+                    AppendLine(textBox1, "Cars path problem!");
+                    checker = 1;
+                    return;
+                }
+            }
         }
     }
 }

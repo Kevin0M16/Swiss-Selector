@@ -114,6 +114,7 @@ namespace Swiss_Selector
             this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -121,6 +122,7 @@ namespace Swiss_Selector
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // listBox1
@@ -1467,8 +1469,8 @@ namespace Swiss_Selector
             // selectiniLocationToolStripMenuItem
             // 
             this.selectiniLocationToolStripMenuItem.Name = "selectiniLocationToolStripMenuItem";
-            this.selectiniLocationToolStripMenuItem.Size = new System.Drawing.Size(239, 24);
-            this.selectiniLocationToolStripMenuItem.Text = "Select ini Files location...";
+            this.selectiniLocationToolStripMenuItem.Size = new System.Drawing.Size(294, 24);
+            this.selectiniLocationToolStripMenuItem.Text = "Select existing ini Files location...";
             this.selectiniLocationToolStripMenuItem.Click += new System.EventHandler(this.SelectiniLocationToolStripMenuItem_Click);
             // 
             // preferencesToolStripMenuItem
@@ -1652,11 +1654,19 @@ namespace Swiss_Selector
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(972, 119);
+            this.label31.Location = new System.Drawing.Point(507, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(185, 29);
             this.label31.TabIndex = 62;
-            this.label31.Text = "Swiss Selector 1.0";
+            this.label31.Text = "Swiss Selector 1.1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(927, 63);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(296, 180);
+            this.pictureBox1.TabIndex = 63;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -1665,6 +1675,7 @@ namespace Swiss_Selector
             this.AutoScroll = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1244, 881);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label30);
@@ -1747,6 +1758,7 @@ namespace Swiss_Selector
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1873,6 +1885,7 @@ namespace Swiss_Selector
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
