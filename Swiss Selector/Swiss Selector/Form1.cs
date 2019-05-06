@@ -26,7 +26,6 @@ namespace Swiss_Selector
             else
             {
                 AppendLine(textBox1, "Swiss Selector loaded but with ERRORS! read log! Code: " + checker);
-
             }
         }
         private void StartUp()
@@ -468,7 +467,7 @@ namespace Swiss_Selector
                         }
                     }
                     return;
-                }
+                }                
             }
             catch
             {
