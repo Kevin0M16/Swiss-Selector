@@ -1,20 +1,19 @@
 ﻿using System;
-
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace Swiss_Selector
+namespace Swiss_Selector //version 1.2
 {
-
     public partial class Form1 : Form
-    {     
+    {
         public Form1()
-        {             
-            InitializeComponent();           
+        {
+            InitializeComponent();
         }
         private void Form1_Shown(object sender, EventArgs e)
         {
@@ -31,21 +30,30 @@ namespace Swiss_Selector
         private void StartUp()
         {
             dllPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
-            listBox1.Items.Clear();
-            savePath = Application.CommonAppDataPath + "\\save.txt";
-            BuildSaveFile();
-            ReloadSave();
-            Pref();            
-            SetKeys();
-            SetNums();
-            listBox3.Items.Clear();
-            ModName(listBox2, listBox3, swissPath);
-            ModName(listBox4, listBox5, keysPath);
+            if (File.Exists(dllPath + @"\Assembly-CSharp-firstpass.dll"))
+            {
+                listBox1.Items.Clear();
+                UnLockKeys(false);
+                savePath = Application.CommonAppDataPath + "\\save.txt";
+                BuildSaveFile();
+                ReloadSave();
+                Pref();
+                SetKeys();
+                SetNums();
+                listBox3.Items.Clear();
+                ModName(listBox2, listBox3, swissPath);
+                ModName(listBox4, listBox5, keysPath);
+            }
+            else
+            {
+                checker = 1;
+                AppendLine(textBox1, "Swiss Selector not in \\Managed folder...");
+                UnLockKeys(false);
+            }
         }
         public void BuildiniFile(string ini)
         {
-            string path = dllPath; //System.IO.Path.GetDirectoryName(Application.ExecutablePath);
-            //AppendLine(textBox1, path + " build dll path");
+            string path = dllPath;
             if (ini == swissPath)
             {
                 if (!File.Exists(ini) && File.Exists(path + @"\Assembly-CSharp-firstpass.dll"))
@@ -55,7 +63,7 @@ namespace Swiss_Selector
                     {
                         File.Create(ini).Close();
                         TextWriter tw = new StreamWriter(ini);
-                        tw.WriteLine("car=car_bentleycontinentalgt");
+                        tw.WriteLine("car=car_boltatlanta");
                         tw.WriteLine("quality=200");
                         tw.WriteLine("mileage=4000");
                         tw.WriteLine("condition=1");
@@ -64,9 +72,14 @@ namespace Swiss_Selector
                         tw.WriteLine("addXPAmount=2500");
                         tw.WriteLine("showInventory=true");
                         tw.Close();
+
                         ClearSwissBoxes();
-                        LoadSwiss();                                               
-                        
+                        LoadSwiss();
+                        LoadPng();
+
+                        swissPath = path + @"\swiss.ini";
+                        Writeini("swissPath", swissPath, savePath);
+
                         if (checker == 0)
                         {
                             AppendLine(textBox1, "The swiss.ini was created Successfully...");
@@ -90,7 +103,7 @@ namespace Swiss_Selector
                     {
                         File.Create(ini).Close();
                         TextWriter tw = new StreamWriter(ini);
-                        tw.WriteLine("car=car_bentleycontinentalgt");
+                        tw.WriteLine("car=car_boltatlanta");
                         tw.WriteLine("quality=200");
                         tw.WriteLine("mileage=4000");
                         tw.WriteLine("condition=1");
@@ -98,9 +111,11 @@ namespace Swiss_Selector
                         tw.WriteLine("setMoneyAmount=1100000");
                         tw.WriteLine("addXPAmount=2500");
                         tw.WriteLine("showInventory=true");
-                        tw.Close();                        
+                        tw.Close();
+
                         ClearSwissBoxes();
                         LoadSwiss();
+
                         if (checker == 0)
                         {
                             AppendLine(textBox1, "The swiss.ini was created Successfully...");
@@ -120,17 +135,8 @@ namespace Swiss_Selector
             }
             if (ini == swissPath && !File.Exists(path + @"\Assembly-CSharp-firstpass.dll"))
             {
-                DialogResult dialogResult4 = MessageBox.Show("Swiss Selector not in \\Managed folder, Would you like to manually select \\Managed location?", "Message", MessageBoxButtons.YesNo);
-                if (dialogResult4 == DialogResult.Yes)
-                {
-                    Selectini("swissPath");
-                    //SelectiniFolder();
-                }
-                else
-                {
-                    AppendLine(textBox1, "Swiss Selector not in \\Managed folder...");
-                    System.Windows.Forms.MessageBox.Show("Swiss Selector not in \\Managed folder...\r\n\r\nNo path set!");
-                }
+                AppendLine(textBox1, "Swiss Selector not in \\Managed folder...");
+                //System.Windows.Forms.MessageBox.Show("Swiss Selector not in \\Managed folder...\r\n\r\nNo path set!");                
             }
             if (ini == keysPath)
             {
@@ -166,9 +172,15 @@ namespace Swiss_Selector
                         tw.WriteLine("AddThisPart=Insert");
                         tw.WriteLine("RotateEngineRight=]");
                         tw.WriteLine("RotateEngineLeft=[");
-                        tw.Close();                        
+                        tw.Close();
+
                         ClearKeysBoxes();
+                        UnLockKeys(true);
                         LoadKeys();
+
+                        keysPath = path + @"\keys.ini";
+                        Writeini("keysPath", keysPath, savePath);
+
                         if (checker == 0)
                         {
                             AppendLine(textBox1, "The keys.ini was created Successfully...");
@@ -184,7 +196,7 @@ namespace Swiss_Selector
                         AppendLine(textBox1, "Canceled! No ini was created...");
                         return;
                     }
-                    
+
                 }
                 else if (File.Exists(ini) && File.Exists(path + @"\Assembly-CSharp-firstpass.dll"))
                 {
@@ -217,9 +229,12 @@ namespace Swiss_Selector
                         tw.WriteLine("AddThisPart=Insert");
                         tw.WriteLine("RotateEngineRight=]");
                         tw.WriteLine("RotateEngineLeft=[");
-                        tw.Close();                        
+                        tw.Close();
+
                         ClearKeysBoxes();
+                        UnLockKeys(true);
                         LoadKeys();
+
                         if (checker == 0)
                         {
                             AppendLine(textBox1, "The keys.ini was created Successfully...");
@@ -239,17 +254,9 @@ namespace Swiss_Selector
             }
             if (ini == keysPath && !File.Exists(path + @"\Assembly-CSharp-firstpass.dll"))
             {
-                DialogResult dialogResult4 = MessageBox.Show("Swiss Selector not in \\Managed folder, Would you like to manually select \\Managed location?", "Message", MessageBoxButtons.YesNo);
-                if (dialogResult4 == DialogResult.Yes)
-                {
-                    Selectini("keysPath");
-                    //SelectiniFolder();
-                }
-                else
-                {
-                    AppendLine(textBox1, "Swiss Selector not in \\Managed folder...");
-                    System.Windows.Forms.MessageBox.Show("Swiss Selector not in \\Managed folder...\r\n\r\nNo path set!");
-                }
+                AppendLine(textBox1, "Swiss Selector not in \\Managed folder...");
+                UnLockKeys(false);
+                //System.Windows.Forms.MessageBox.Show("Swiss Selector not in \\Managed folder...\r\n\r\nNo path set!");
             }
         }
         public void BuildSaveFile()
@@ -261,7 +268,7 @@ namespace Swiss_Selector
                 tw.WriteLine("swissPath=D:\\Steam\\steamapps\\common\\Car Mechanic Simulator 2018\\cms2018_Data\\Managed\\swiss.ini");
                 tw.WriteLine("keysPath=D:\\Steam\\steamapps\\common\\Car Mechanic Simulator 2018\\cms2018_Data\\Managed\\keys.ini");
                 tw.WriteLine("carsPath=D:\\Steam");
-                tw.Close();                
+                tw.Close();
             }
             else if (File.Exists(savePath))
             {
@@ -272,18 +279,21 @@ namespace Swiss_Selector
         {
             AppendLine(textBox1, "Path to " + file + " not set!");
             AppendLine(textBox1, "Searching for " + file + " at default locations.....");
-            if(file == "keysPath")
+            if (file == "keysPath")
             {
                 string path = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
                 keysPath = Path.GetFullPath(path + @"\keys.ini");
                 if (File.Exists(keysPath))
-                {                    
+                {
                     Writeini("keysPath", keysPath, savePath);
-                    AppendLine(textBox1, "Path to keys.ini Set Successfully...");  
+                    AppendLine(textBox1, "Path to keys.ini Set Successfully...");
+                    LoadKeys();
                 }
                 else if (!File.Exists(keysPath))
                 {
-                    AppendLine(textBox1, "Path to keys.ini not found! Please create or manually select \\Managed directory location...");
+                    //AppendLine(textBox1, "Path to keys.ini not found! Please create or manually select \\Managed directory location...");
+                    AppendLine(textBox1, "dll path found, creating keys.ini");
+                    BuildiniFile(keysPath);
                 }
             }
             if (file == "swissPath")
@@ -291,13 +301,17 @@ namespace Swiss_Selector
                 string path = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
                 swissPath = Path.GetFullPath(path + @"\swiss.ini");
                 if (File.Exists(swissPath))
-                {                    
+                {
                     Writeini("swissPath", swissPath, savePath);
                     AppendLine(textBox1, "Path to swiss.ini Set Successfully...");
+                    LoadSwiss();
+                    LoadPng();
                 }
                 else if (!File.Exists(swissPath))
                 {
-                    AppendLine(textBox1, "Path to swiss.ini not found! Please create or manually select \\Managed directory location...");
+                    //AppendLine(textBox1, "Path to swiss.ini not found! Please create or manually select \\Managed directory location...");
+                    AppendLine(textBox1, "dll path found, creating swiss.ini");
+                    BuildiniFile(swissPath);
                 }
             }
             if (file == "carsPath")
@@ -306,7 +320,7 @@ namespace Swiss_Selector
                 {
                     string path = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
                     //string path = @"D:\Steam\steamapps\common\Car Mechanic Simulator 2018\cms2018_Data\Managed";
-                    carsPath = Path.GetFullPath(Path.Combine(path, @"..\..\..\..\..\"));               
+                    carsPath = Path.GetFullPath(Path.Combine(path, @"..\..\..\..\..\"));
 
                     if (Directory.Exists(carsPath))
                     {
@@ -315,26 +329,26 @@ namespace Swiss_Selector
                         if (Files.Length != 0)
                         {
                             Writeini("carsPath", carsPath, savePath);
-                            AppendLine(textBox1, "Path to Cars Set Successfully..."); 
+                            AppendLine(textBox1, "Path to Cars Set Successfully...");
                         }
                         else
                         {
                             return;
-                        }                    
+                        }
                     }
                 }
                 catch
                 {
-                    AppendLine(textBox1, "Please set Cars directory manually, Swiss Selector not in \\Managed  folder...");                    
+                    AppendLine(textBox1, "CarsPath error!");
                     checker = 1;
                     return;
                 }
-            }            
-        }        
+            }
+        }
         public void ReloadSave()
         {
             Read("keysPath", savePath);
-            keysPath = currentKey;            
+            keysPath = currentKey;
             Read("swissPath", savePath);
             swissPath = currentKey;
             Read("carsPath", savePath);
@@ -343,6 +357,7 @@ namespace Swiss_Selector
             if (File.Exists(keysPath))
             {
                 AppendLine(textBox1, "Path to keys.ini found...");
+                UnLockKeys(true);
             }
             else
             {
@@ -352,7 +367,7 @@ namespace Swiss_Selector
             if (File.Exists(swissPath))
             {
                 AppendLine(textBox1, "Path to swiss.ini found...");
-                dllPath = System.IO.Path.GetDirectoryName(swissPath);
+                //dllPath = System.IO.Path.GetDirectoryName(swissPath);
             }
             else
             {
@@ -360,14 +375,14 @@ namespace Swiss_Selector
                 LookForDefaults("swissPath");
             }
             if (Directory.Exists(carsPath))
-            {               
+            {
                 LoadCars();
                 LoadPng();
             }
             else
-            {                
+            {
                 AppendLine(textBox1, "Path to cars not found!");
-                LookForDefaults("carsPath");                
+                LookForDefaults("carsPath");
                 LoadCars();
             }
         }
@@ -387,11 +402,11 @@ namespace Swiss_Selector
                     dontOpenInvToolStripMenuItem.Checked = true;
                 }
             }
-            else if(!File.Exists(swissPath))
+            else if (!File.Exists(swissPath))
             {
                 openInvToolStripMenuItem.Checked = false;
                 dontOpenInvToolStripMenuItem.Checked = false;
-                
+
             }
         }
         public static void AppendLine(TextBox source, string value)
@@ -406,23 +421,23 @@ namespace Swiss_Selector
             try
             {
                 if (File.Exists(path))
-                {                
+                {
                     string[] array = File.ReadAllLines(path).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
                     for (int i = 0; i < array.Length; i++)
                     {
                         string a = array[i].Substring(0, array[i].IndexOf("="));
                         string s = array[i].Substring(array[i].IndexOf("=") + 1);
 
-                        lsb1.Items.Add(s);                        
+                        lsb1.Items.Add(s);
                     }
                     return;
-                }                
+                }
             }
             catch
             {
-                    AppendLine(textBox1, "ini File Corrupted! See Log!");
-                    checker = 1;                    
-                    return;
+                AppendLine(textBox1, "ini File Corrupted! See Log!");
+                checker = 1;
+                return;
             }
         }
         private void ModName(ListBox lsb1, ListBox lsb2, string path)
@@ -446,9 +461,9 @@ namespace Swiss_Selector
             catch
             {
                 AppendLine(textBox1, "ini File Corrupted! See Log!");
-                checker = 1;                
+                checker = 1;
                 return;
-            }            
+            }
         }
         private void ReadKeys(string key, ComboBox cmbbx)
         {
@@ -467,18 +482,47 @@ namespace Swiss_Selector
                         }
                     }
                     return;
-                }                
+                }
             }
             catch
             {
                 AppendLine(textBox1, "keys.ini File Corrupted! Rebuild key.ini file!");
-                checker = 1;                
+                UnLockKeys(false);
+                checker = 1;
                 return;
-            }            
+            }
+        }
+        private void UnLockKeys(bool locker)
+        {
+            button1.Enabled = locker;
+            comboBox1.Enabled = locker;
+            comboBox2.Enabled = locker;
+            comboBox3.Enabled = locker;
+            comboBox4.Enabled = locker;
+            comboBox5.Enabled = locker;
+            comboBox6.Enabled = locker;
+            comboBox7.Enabled = locker;
+            comboBox8.Enabled = locker;
+            comboBox9.Enabled = locker;
+            comboBox10.Enabled = locker;
+            comboBox11.Enabled = locker;
+            //comboBox12.Enabled = locker;
+            //comboBox13.Enabled = locker;
+            comboBox14.Enabled = locker;
+            comboBox15.Enabled = locker;
+            comboBox16.Enabled = locker;
+            comboBox17.Enabled = locker;
+            comboBox18.Enabled = locker;
+            comboBox19.Enabled = locker;
+            comboBox20.Enabled = locker;
+            comboBox21.Enabled = locker;
+            comboBox22.Enabled = locker;
+            comboBox23.Enabled = locker;
+            comboBox24.Enabled = locker;
         }
         private void SetKeys()
-        {            
-                ReadKeys("SpawnCar", comboBox1);
+        {
+            ReadKeys("SpawnCar", comboBox1);
             if (checker == 0)
             {
                 ReadKeys("IncreaseConfig", comboBox2);
@@ -507,13 +551,14 @@ namespace Swiss_Selector
             }
             else
             {
+                UnLockKeys(false);
                 return;
             }
         }
         private void PopulateCarListBox(ListBox lsb, string Folder)
         {
             if (!Directory.Exists(Folder))
-            {                
+            {
                 AppendLine(textBox1, "Cars path not Found!, try manually selecting root location of ALL Cars. Ex. D:\\Steam");
                 return;
             }
@@ -544,13 +589,13 @@ namespace Swiss_Selector
                 {
                     AppendLine(textBox1, "Cars path problem!");
                     checker = 1;
-                    return;                    
+                    return;
                 }
             }
         }
         private void Update(string key, ComboBox cmb)
         {
-            if(cmb.SelectedItem != null)
+            if (cmb.SelectedItem != null)
             {
                 Object selectedItem1 = cmb.SelectedItem;
                 string newkey1 = selectedItem1.ToString();
@@ -559,7 +604,7 @@ namespace Swiss_Selector
             else
             {
                 return;
-            }            
+            }
         }
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -592,7 +637,7 @@ namespace Swiss_Selector
 
                 listBox5.Items.Clear();
                 ModName2(listBox5, keysPath);
-                if(checker == 0)
+                if (checker == 0)
                 {
                     AppendLine(textBox1, "Key mappings updated...");
                     System.Windows.Forms.MessageBox.Show("Changes have been saved");
@@ -600,24 +645,25 @@ namespace Swiss_Selector
                 else
                 {
                     AppendLine(textBox1, "No keys updated! keys.ini problem!");
-                }    
+                }
             }
             else if (!File.Exists(keysPath))
             {
                 //listBox5.Items.Clear();
                 AppendLine(textBox1, "Error keys.ini file not found!");
+                UnLockKeys(false);
                 ClearKeysBoxes();
                 return;
-            }            
+            }
         }
         private void WriteCar(string key, string newKey, string path)
         {
             try
-            {            
+            {
                 if (File.Exists(path))
                 {
-                
-                    string[] array = File.ReadAllLines(path).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();                
+
+                    string[] array = File.ReadAllLines(path).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
 
                     for (int i = 0; i < array.Length; i++)
                     {
@@ -649,9 +695,18 @@ namespace Swiss_Selector
                 {
                     string[] array = File.ReadAllLines(path).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
                     int result = array.GetLength(0);
-                    if(result < 8 && path == swissPath)
+                    if (result < 8 && path == swissPath)
                     {
                         AppendLine(textBox1, "Please build new swiss.ini for more features!");
+                        numericUpDown1.Enabled = false;
+                        numericUpDown6.Enabled = false;
+                        numericUpDown5.Enabled = false;
+                    }
+                    else
+                    {
+                        numericUpDown1.Enabled = true;
+                        numericUpDown6.Enabled = true;
+                        numericUpDown5.Enabled = true;
                     }
 
                     for (int i = 0; i < array.Length; i++)
@@ -670,15 +725,15 @@ namespace Swiss_Selector
                 }
                 else
                 {
-                    AppendLine(textBox1, "Error File not found!");
-                } 
+                    AppendLine(textBox1, "Error File not found!");                                      
+                }
             }
             catch
             {
                 AppendLine(textBox1, "ini File Corrupted! See Log!");
                 checker = 1;
                 return;
-            }                       
+            }
         }
         private void Read(string key, string path)
         {
@@ -707,7 +762,7 @@ namespace Swiss_Selector
                 AppendLine(textBox1, "ini File Corrupted! See Log!");
                 checker = 1;
                 return;
-            }            
+            }
         }
         class FInfo
         {
@@ -736,7 +791,6 @@ namespace Swiss_Selector
                 ClearSwissBoxes();
                 ClearNums();
             }
-            
             listBox3.Items.Clear();
             ModName2(listBox3, swissPath);
         }
@@ -745,11 +799,11 @@ namespace Swiss_Selector
             using (var fbd = new FolderBrowserDialog())
             {
                 try
-                { 
+                {
                     DialogResult result = fbd.ShowDialog();
 
                     if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
-                    {                    
+                    {
                         DirectoryInfo dinfo = new DirectoryInfo(fbd.SelectedPath);
                         FileInfo[] Files = dinfo.GetFiles(cms, SearchOption.AllDirectories);
 
@@ -775,10 +829,10 @@ namespace Swiss_Selector
         private void IniPath(string ini)
         {
             try
-            { 
+            {
                 using (var fbd = new FolderBrowserDialog())
                 {
-                     DialogResult result = fbd.ShowDialog();
+                    DialogResult result = fbd.ShowDialog();
 
                     if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
                     {
@@ -801,14 +855,14 @@ namespace Swiss_Selector
                         {
                             if (File.Exists(fbd.SelectedPath + @"\Assembly-CSharp-firstpass.dll"))
                             {
-                                AppendLine(textBox1,"\\Managed directory set...");
+                                AppendLine(textBox1, "\\Managed directory set...");
                                 dllPath = fbd.SelectedPath;
                             }
                             else
                             {
                                 AppendLine(textBox1, "ini files have to be in \\Managed directory!");
                                 MessageBox.Show("ini files have to be in \\Managed directory ", "Message");
-                            }                            
+                            }
                         }
                     }
                     else if (result == DialogResult.Cancel)
@@ -819,7 +873,7 @@ namespace Swiss_Selector
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\r\n\r\n ini path problem!" );
+                MessageBox.Show(ex.Message + "\r\n\r\n ini path problem!");
                 checker = 1;
                 return;
             }
@@ -827,20 +881,13 @@ namespace Swiss_Selector
         private void ClearSwissBoxes()
         {
             listBox2.Items.Clear();
-            listBox3.Items.Clear();            
+            listBox3.Items.Clear();
         }
         private void ClearKeysBoxes()
-        {            
+        {
             listBox4.Items.Clear();
             listBox5.Items.Clear();
         }
-        //private void ClearBoxes()
-        //{            
-        //    listBox2.Items.Clear();
-        //    listBox3.Items.Clear();
-        //    listBox4.Items.Clear();
-        //    listBox5.Items.Clear();
-        //}
         private void SelectiniFolder()
         {
             try
@@ -859,9 +906,9 @@ namespace Swiss_Selector
                         {
                             keysPath = (fbd.SelectedPath + @"\keys.ini");
                             AppendLine(textBox1, "Path to keys.ini Set Successfully...");
-                            swissPath = (fbd.SelectedPath + @"\swiss.ini");                            
+                            swissPath = (fbd.SelectedPath + @"\swiss.ini");
                             AppendLine(textBox1, "Path to swiss.ini Set Successfully...");
-                            MessageBox.Show("ini files Path Set Successfully...\r\n\r\n Now close and move Swiss Selector to \\Managed directory", "Message");                            
+                            MessageBox.Show("ini files Path Set Successfully...\r\n\r\n Now close and move Swiss Selector to \\Managed directory", "Message");
                         }
                         else
                         {
@@ -881,12 +928,11 @@ namespace Swiss_Selector
                 return;
             }
         }
-
         private void Selectini(string ini)
         {
-            IniPath("*.ini");
             if (File.Exists(dllPath + @"\Assembly-CSharp-firstpass.dll"))
             {
+                IniPath("*.ini");
                 if (ini == "swissPath")
                 {
                     if (File.Exists(dllPath + "\\swiss.ini"))
@@ -946,19 +992,21 @@ namespace Swiss_Selector
                         BuildiniFile(keysPath);
                     }
                 }
-                //ClearBoxes();
-                //LoadIni();
+            }
+            else
+            {
+                AppendLine(textBox1, "Swiss Selector not in \\Managed folder...");
             }
         }
         private void SelectiniLocationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Selectini("both");            
+            Selectini("both");
             //SelectiniFolder();
         }
         private void LoadPng()
         {
             Read("car", swissPath);
-            int index = listBox1.FindString(currentKey);            
+            int index = listBox1.FindString(currentKey);
             if (index != -1)
             {
                 listBox1.SetSelected(index, true);
@@ -971,38 +1019,27 @@ namespace Swiss_Selector
             {
                 return;
             }
-            
         }
         private void LoadCars()
         {
             checker = 0;
             listBox1.Items.Clear();
-            PopulateCarListBox(listBox1, carsPath);            
+            PopulateCarListBox(listBox1, carsPath);
         }
         private void LoadSwiss()
         {
             checker = 0;
-            Pref();            
+            Pref();
             SetNums();
             listBox3.Items.Clear();
-            ModName(listBox2, listBox3, swissPath);            
+            ModName(listBox2, listBox3, swissPath);
         }
         private void LoadKeys()
         {
             checker = 0;
-            SetKeys();            
+            SetKeys();
             ModName(listBox4, listBox5, keysPath);
         }
-        //private void LoadIni()
-        //{
-        //    checker = 0;
-        //    Pref();
-        //    SetKeys();
-        //    SetNums();
-        //    listBox3.Items.Clear();
-        //   ModName(listBox2, listBox3, swissPath);
-        //    ModName(listBox4, listBox5, keysPath);            
-        //}
         private void SetNums()
         {
             ReadNums("addMoneyAmount", numericUpDown1);
@@ -1044,7 +1081,7 @@ namespace Swiss_Selector
                 AppendLine(textBox1, "swiss.ini File Corrupted! Rebuild swiss.ini file!");
                 checker = 1;
                 return;
-            }            
+            }
         }
         private void WriteNum(string key, NumericUpDown numbox)
         {
@@ -1055,14 +1092,14 @@ namespace Swiss_Selector
             ModName2(listBox3, swissPath);
         }
         private void ClearNums()
-        {   
+        {
             numericUpDown1.Value = 0;
             numericUpDown2.Value = 0;
             numericUpDown3.Value = 0;
             numericUpDown4.Value = 0;
             numericUpDown5.Value = 0;
             numericUpDown6.Value = 0;
-            ClearSwissBoxes();            
+            ClearSwissBoxes();
         }
         private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
         {
@@ -1073,8 +1110,8 @@ namespace Swiss_Selector
             }
             else
             {
-                ClearNums();                
-            }               
+                ClearNums();
+            }
         }
         private void NumericUpDown2_ValueChanged(object sender, EventArgs e)
         {
@@ -1165,10 +1202,10 @@ namespace Swiss_Selector
             {
                 openInvToolStripMenuItem.Checked = false;
             }
-        } 
+        }
         private void ManuallySetCarFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CarsPath("*.cms");            
+            CarsPath("*.cms");
             if (!Directory.Exists(ChosenPath))
             {
                 AppendLine(textBox1, "No Cars Found in Selected Path!");
@@ -1189,14 +1226,14 @@ namespace Swiss_Selector
             string path = dllPath; //System.IO.Path.GetDirectoryName(Application.ExecutablePath);
             swissPath = Path.GetFullPath(path + @"\swiss.ini");
             BuildiniFile(swissPath);
-            Writeini("swissPath", swissPath, savePath);
+            //Writeini("swissPath", swissPath, savePath);
         }
         private void BuildKeysiniFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string path = dllPath; //System.IO.Path.GetDirectoryName(Application.ExecutablePath);
             keysPath = Path.GetFullPath(path + @"\keys.ini");
             BuildiniFile(keysPath);
-            Writeini("keysPath", keysPath, savePath);
+            //Writeini("keysPath", keysPath, savePath);
         }
         private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1206,7 +1243,7 @@ namespace Swiss_Selector
         private void GetPNG(string picname)
         {
             if (!Directory.Exists(carsPath))
-            {               
+            {
                 return;
             }
             else
@@ -1216,7 +1253,7 @@ namespace Swiss_Selector
                     DirectoryInfo dinfo = new DirectoryInfo(carsPath);
                     FileInfo[] Files = dinfo.GetFiles(picname, SearchOption.AllDirectories);
                     if (Files.Length != 0)
-                    {                        
+                    {
                         foreach (FileInfo file in Files)
                         {
                             string pngPath = file.FullName;
@@ -1224,10 +1261,10 @@ namespace Swiss_Selector
 
                             pictureBox1.ImageLocation = pngPath;
                             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-                        }                        
+                        }
                     }
                     else
-                    {                        
+                    {
                         pictureBox1.Image = null;
                         return;
                     }
@@ -1240,6 +1277,56 @@ namespace Swiss_Selector
                 }
             }
         }
-    }
+        private async void RemoveAllCreatedFilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(dllPath + @"\swiss.ini"))
+            {
+                File.Delete(dllPath + @"\swiss.ini");
+                AppendLine(textBox1, "swiss.ini deleted.");
+                ClearNums();
+                ClearSwissBoxes();
+            }
+            else
+            {
+                AppendLine(textBox1, "swiss.ini not found, nothing deleted");
+            }
 
+            if (File.Exists(dllPath + @"\keys.ini"))
+            {
+                File.Delete(dllPath + @"\keys.ini");
+                AppendLine(textBox1, "keys.ini deleted.");
+                ClearKeysBoxes();
+                UnLockKeys(false);
+            }
+            else
+            {
+                AppendLine(textBox1, "keys.ini not found, nothing deleted");
+            }
+
+            if (File.Exists(Application.CommonAppDataPath + "\\save.txt"))
+            {
+                File.Delete(Application.CommonAppDataPath + "\\save.txt");
+                AppendLine(textBox1, "Save.txt deleted.");
+                
+                if (!File.Exists(Application.CommonAppDataPath + "\\save.txt"))
+                {
+                    await Task.Delay(3000);
+                    DialogResult dialogResult1 = MessageBox.Show("save.txt not found!, Create save.txt?", "save.txt Creator", MessageBoxButtons.YesNo);
+                    if (dialogResult1 == DialogResult.Yes)
+                    {
+                        BuildSaveFile();
+                    }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("File save.txt not created and missing!\r\n\r\n Exiting Swiss Selector", "Warning!");
+                        Application.Exit();
+                    }
+                }                
+            }
+            else
+            {
+                AppendLine(textBox1, "Save.txt not found, nothing deleted");
+            }
+        }
+    }
 }

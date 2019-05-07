@@ -115,6 +115,7 @@ namespace Swiss_Selector
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.removeAllCreatedFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -144,7 +145,7 @@ namespace Swiss_Selector
             this.listBox2.Location = new System.Drawing.Point(283, 55);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(158, 194);
-            this.listBox2.TabIndex = 6;
+            this.listBox2.TabIndex = 1;
             // 
             // label28
             // 
@@ -173,7 +174,7 @@ namespace Swiss_Selector
             0});
             this.numericUpDown5.Name = "numericUpDown5";
             this.numericUpDown5.Size = new System.Drawing.Size(80, 27);
-            this.numericUpDown5.TabIndex = 22;
+            this.numericUpDown5.TabIndex = 10;
             this.numericUpDown5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown5.ValueChanged += new System.EventHandler(this.NumericUpDown5_ValueChanged);
             // 
@@ -205,7 +206,7 @@ namespace Swiss_Selector
             0});
             this.numericUpDown4.Name = "numericUpDown4";
             this.numericUpDown4.Size = new System.Drawing.Size(80, 27);
-            this.numericUpDown4.TabIndex = 20;
+            this.numericUpDown4.TabIndex = 7;
             this.numericUpDown4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown4.ValueChanged += new System.EventHandler(this.NumericUpDown4_ValueChanged);
             // 
@@ -236,7 +237,7 @@ namespace Swiss_Selector
             0});
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(80, 27);
-            this.numericUpDown3.TabIndex = 18;
+            this.numericUpDown3.TabIndex = 6;
             this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown3.ValueChanged += new System.EventHandler(this.NumericUpDown3_ValueChanged);
             // 
@@ -267,7 +268,7 @@ namespace Swiss_Selector
             0});
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(80, 27);
-            this.numericUpDown2.TabIndex = 16;
+            this.numericUpDown2.TabIndex = 5;
             this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown2.ValueChanged += new System.EventHandler(this.NumericUpDown2_ValueChanged);
             // 
@@ -298,7 +299,7 @@ namespace Swiss_Selector
             0});
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(80, 27);
-            this.numericUpDown1.TabIndex = 14;
+            this.numericUpDown1.TabIndex = 8;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
             // 
@@ -310,7 +311,7 @@ namespace Swiss_Selector
             this.listBox5.Location = new System.Drawing.Point(447, 283);
             this.listBox5.Name = "listBox5";
             this.listBox5.Size = new System.Drawing.Size(158, 536);
-            this.listBox5.TabIndex = 13;
+            this.listBox5.TabIndex = 4;
             // 
             // listBox4
             // 
@@ -320,7 +321,7 @@ namespace Swiss_Selector
             this.listBox4.Location = new System.Drawing.Point(283, 283);
             this.listBox4.Name = "listBox4";
             this.listBox4.Size = new System.Drawing.Size(158, 536);
-            this.listBox4.TabIndex = 12;
+            this.listBox4.TabIndex = 3;
             // 
             // listBox3
             // 
@@ -330,7 +331,7 @@ namespace Swiss_Selector
             this.listBox3.Location = new System.Drawing.Point(447, 55);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(245, 194);
-            this.listBox3.TabIndex = 11;
+            this.listBox3.TabIndex = 2;
             // 
             // label9
             // 
@@ -398,7 +399,7 @@ namespace Swiss_Selector
             this.button1.Location = new System.Drawing.Point(854, 827);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 38);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 34;
             this.button1.Text = "Save Key Bindings";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -462,7 +463,7 @@ namespace Swiss_Selector
             this.comboBox15.Location = new System.Drawing.Point(1163, 530);
             this.comboBox15.Name = "comboBox15";
             this.comboBox15.Size = new System.Drawing.Size(60, 27);
-            this.comboBox15.TabIndex = 32;
+            this.comboBox15.TabIndex = 25;
             // 
             // label24
             // 
@@ -584,7 +585,7 @@ namespace Swiss_Selector
             this.comboBox22.Location = new System.Drawing.Point(1163, 794);
             this.comboBox22.Name = "comboBox22";
             this.comboBox22.Size = new System.Drawing.Size(60, 27);
-            this.comboBox22.TabIndex = 24;
+            this.comboBox22.TabIndex = 33;
             // 
             // comboBox14
             // 
@@ -619,7 +620,7 @@ namespace Swiss_Selector
             this.comboBox14.Location = new System.Drawing.Point(1163, 497);
             this.comboBox14.Name = "comboBox14";
             this.comboBox14.Size = new System.Drawing.Size(60, 27);
-            this.comboBox14.TabIndex = 31;
+            this.comboBox14.TabIndex = 24;
             // 
             // label7
             // 
@@ -823,7 +824,7 @@ namespace Swiss_Selector
             this.comboBox23.Location = new System.Drawing.Point(854, 794);
             this.comboBox23.Name = "comboBox23";
             this.comboBox23.Size = new System.Drawing.Size(60, 27);
-            this.comboBox23.TabIndex = 23;
+            this.comboBox23.TabIndex = 21;
             // 
             // comboBox17
             // 
@@ -892,7 +893,7 @@ namespace Swiss_Selector
             this.comboBox21.Location = new System.Drawing.Point(1163, 762);
             this.comboBox21.Name = "comboBox21";
             this.comboBox21.Size = new System.Drawing.Size(60, 27);
-            this.comboBox21.TabIndex = 30;
+            this.comboBox21.TabIndex = 32;
             // 
             // comboBox11
             // 
@@ -996,7 +997,7 @@ namespace Swiss_Selector
             this.comboBox1.Location = new System.Drawing.Point(854, 431);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(60, 27);
-            this.comboBox1.TabIndex = 10;
+            this.comboBox1.TabIndex = 12;
             // 
             // label14
             // 
@@ -1083,7 +1084,7 @@ namespace Swiss_Selector
             this.comboBox13.Location = new System.Drawing.Point(1163, 464);
             this.comboBox13.Name = "comboBox13";
             this.comboBox13.Size = new System.Drawing.Size(60, 27);
-            this.comboBox13.TabIndex = 29;
+            this.comboBox13.TabIndex = 23;
             // 
             // comboBox18
             // 
@@ -1118,7 +1119,7 @@ namespace Swiss_Selector
             this.comboBox18.Location = new System.Drawing.Point(1163, 662);
             this.comboBox18.Name = "comboBox18";
             this.comboBox18.Size = new System.Drawing.Size(60, 27);
-            this.comboBox18.TabIndex = 25;
+            this.comboBox18.TabIndex = 29;
             // 
             // comboBox20
             // 
@@ -1153,7 +1154,7 @@ namespace Swiss_Selector
             this.comboBox20.Location = new System.Drawing.Point(1163, 729);
             this.comboBox20.Name = "comboBox20";
             this.comboBox20.Size = new System.Drawing.Size(60, 27);
-            this.comboBox20.TabIndex = 28;
+            this.comboBox20.TabIndex = 31;
             // 
             // comboBox7
             // 
@@ -1371,7 +1372,7 @@ namespace Swiss_Selector
             this.comboBox12.Location = new System.Drawing.Point(1163, 431);
             this.comboBox12.Name = "comboBox12";
             this.comboBox12.Size = new System.Drawing.Size(60, 27);
-            this.comboBox12.TabIndex = 21;
+            this.comboBox12.TabIndex = 22;
             // 
             // comboBox9
             // 
@@ -1441,7 +1442,7 @@ namespace Swiss_Selector
             this.comboBox19.Location = new System.Drawing.Point(1163, 696);
             this.comboBox19.Name = "comboBox19";
             this.comboBox19.Size = new System.Drawing.Size(60, 27);
-            this.comboBox19.TabIndex = 22;
+            this.comboBox19.TabIndex = 30;
             // 
             // menuStrip1
             // 
@@ -1461,7 +1462,8 @@ namespace Swiss_Selector
             // 
             this.toolStripMenuItem1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.selectiniLocationToolStripMenuItem});
+            this.selectiniLocationToolStripMenuItem,
+            this.removeAllCreatedFilesToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(44, 23);
             this.toolStripMenuItem1.Text = "File";
@@ -1606,7 +1608,7 @@ namespace Swiss_Selector
             this.comboBox24.Location = new System.Drawing.Point(1163, 630);
             this.comboBox24.Name = "comboBox24";
             this.comboBox24.Size = new System.Drawing.Size(60, 27);
-            this.comboBox24.TabIndex = 57;
+            this.comboBox24.TabIndex = 28;
             // 
             // label30
             // 
@@ -1635,7 +1637,7 @@ namespace Swiss_Selector
             0});
             this.numericUpDown6.Name = "numericUpDown6";
             this.numericUpDown6.Size = new System.Drawing.Size(80, 27);
-            this.numericUpDown6.TabIndex = 59;
+            this.numericUpDown6.TabIndex = 9;
             this.numericUpDown6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown6.ValueChanged += new System.EventHandler(this.NumericUpDown6_ValueChanged);
             // 
@@ -1645,9 +1647,10 @@ namespace Swiss_Selector
             this.textBox1.Location = new System.Drawing.Point(611, 283);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox1.Size = new System.Drawing.Size(612, 142);
-            this.textBox1.TabIndex = 61;
+            this.textBox1.TabIndex = 11;
             this.textBox1.WordWrap = false;
             // 
             // label31
@@ -1658,7 +1661,7 @@ namespace Swiss_Selector
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(185, 29);
             this.label31.TabIndex = 62;
-            this.label31.Text = "Swiss Selector 1.1";
+            this.label31.Text = "Swiss Selector 1.2";
             // 
             // pictureBox1
             // 
@@ -1667,6 +1670,13 @@ namespace Swiss_Selector
             this.pictureBox1.Size = new System.Drawing.Size(296, 180);
             this.pictureBox1.TabIndex = 63;
             this.pictureBox1.TabStop = false;
+            // 
+            // removeAllSwissSelectorCreatedFilesToolStripMenuItem
+            // 
+            this.removeAllCreatedFilesToolStripMenuItem.Name = "removeAllCreatedFilesToolStripMenuItem";
+            this.removeAllCreatedFilesToolStripMenuItem.Size = new System.Drawing.Size(298, 24);
+            this.removeAllCreatedFilesToolStripMenuItem.Text = "Remove All Created Files";
+            this.removeAllCreatedFilesToolStripMenuItem.Click += new System.EventHandler(this.RemoveAllCreatedFilesToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -1748,7 +1758,7 @@ namespace Swiss_Selector
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Swiss Selector 1.1";
+            this.Text = "Swiss Selector 1.2";
             this.Shown += new System.EventHandler(this.Form1_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
@@ -1887,6 +1897,7 @@ namespace Swiss_Selector
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem removeAllCreatedFilesToolStripMenuItem;
     }
 }
 
