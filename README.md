@@ -1,10 +1,10 @@
-![Alt text](/SwissSelector1.1.png?raw=true "Optional Title")
+![Alt text](/SwissSelector1.2.png?raw=true "Optional Title")
 
 # Swiss-Selector
 CMS 2018 Mod
 
 <i>Updated to 1.2 -- on startup, tool now prompts to create ini files and comboboxes are greyed out<br />
-Added a select under File to delete all files created by tool</i><br />
+Added a select under File to delete all files created by tool</i><br /><br />
 <i>Updated to 1.1 -- added small image preview of mod cars and added 24 cars to junkyard</i><br />
 
 //Backup your Managed Folder:  Steam\steamapps\common\Car Mechanic Simulator 2018\cms2018_Data\Managed<br />
