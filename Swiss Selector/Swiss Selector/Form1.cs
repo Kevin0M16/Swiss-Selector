@@ -172,7 +172,7 @@ namespace Swiss_Selector //version 1.3
                         tw.WriteLine("AddThisPart=Insert");
                         tw.WriteLine("RotateEngineRight=]");
                         tw.WriteLine("RotateEngineLeft=[");
-                        tw.WriteLine("IsExamined=PageUp");
+                        tw.WriteLine("CarIsExamined=PageUp");
                         tw.WriteLine("PartIsExamined=PageDown");
                         tw.Close();
 
@@ -233,7 +233,7 @@ namespace Swiss_Selector //version 1.3
                         tw.WriteLine("AddThisPart=Insert");
                         tw.WriteLine("RotateEngineRight=]");
                         tw.WriteLine("RotateEngineLeft=[");
-                        tw.WriteLine("IsExamined=PageUp");
+                        tw.WriteLine("CarIsExamined=PageUp");
                         tw.WriteLine("PartIsExamined=PageDown");
                         tw.Close();
 
@@ -561,7 +561,7 @@ namespace Swiss_Selector //version 1.3
                 ReadKeys("AddThisPart", comboBox21);
                 ReadKeys("RotateEngineRight", comboBox22);
                 ReadKeys("RotateEngineLeft", comboBox23);
-                ReadKeys("IsExamined", comboBox25);
+                ReadKeys("CarIsExamined", comboBox25);
                 ReadKeys("PartIsExamined", comboBox26);
             }
             else
@@ -649,7 +649,7 @@ namespace Swiss_Selector //version 1.3
                 Update("AddThisPart", comboBox21);
                 Update("RotateEngineRight", comboBox22);
                 Update("RotateEngineLeft", comboBox23);
-                Update("IsExamined", comboBox25);
+                Update("CarIsExamined", comboBox25);
                 Update("PartIsExamined", comboBox26);
 
                 listBox5.Items.Clear();
