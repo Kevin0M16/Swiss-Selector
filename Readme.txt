@@ -14,8 +14,8 @@ Keypad 0 - Duplicate Engine on Engine Stand add to inventory and set condition/q
 Keypad+ - Increase speed
 Keypad- - Decrease speed
 Keypad/ - Photo Mode
-Keypad PageUP - Entire Car under mouse is Examined
-Keypad PageDown - Part under mouse is Examined
+PageUP - Entire Car under mouse is Examined
+PageDown - Part under mouse is Examined
 
 F6 - Add all Engine parts from Engine on Engine Stand to inventory and set condition/quality on Swiss Selector
 F7 - Repair all items in inventory and set condition/quality from ini file.
