@@ -1,7 +1,8 @@
 ![Alt text](/SwissSelector1.3.png?raw=true "Optional Title")
 
 # Swiss-Selector
-CMS 2018 Mod
+CMS 2018 Mod<br />
+
 <i>Updated to 1.3 -- Added entire car is examined and part is examined. Fixed some file locating issues</i><br /><br />
 <i>Updated to 1.2 -- on first startup, tool now prompts to create ini files and comboboxes are greyed out<br />
 Added a select under File to delete all files created by tool</i><br /><br />
