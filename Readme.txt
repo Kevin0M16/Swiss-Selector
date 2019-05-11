@@ -16,6 +16,8 @@ Keypad- - Decrease speed
 Keypad/ - Photo Mode
 PageUP - Entire Car under mouse is Examined
 PageDown - Part under mouse is Examined
+Delete - Deletes car at Garage Entrance 1
+Shift + Delete - Deletes all barns after reload game
 
 F6 - Add all Engine parts from Engine on Engine Stand to inventory and set condition/quality on Swiss Selector
 F7 - Repair all items in inventory and set condition/quality from ini file.

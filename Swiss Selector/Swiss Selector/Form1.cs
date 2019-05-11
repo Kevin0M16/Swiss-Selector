@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-namespace Swiss_Selector //version 1.3
+namespace Swiss_Selector //version 1.4
 {
     public partial class Form1 : Form
     {
@@ -71,6 +71,8 @@ namespace Swiss_Selector //version 1.3
                         tw.WriteLine("setMoneyAmount=1100000");
                         tw.WriteLine("addXPAmount=2500");
                         tw.WriteLine("showInventory=true");
+                        tw.WriteLine("showIntro=true");
+                        tw.WriteLine("spawnIsExamined=true");
                         tw.Close();
 
                         //ClearSwissBoxes();
@@ -111,6 +113,8 @@ namespace Swiss_Selector //version 1.3
                         tw.WriteLine("setMoneyAmount=1100000");
                         tw.WriteLine("addXPAmount=2500");
                         tw.WriteLine("showInventory=true");
+                        tw.WriteLine("showIntro=true");
+                        tw.WriteLine("spawnIsExamined=true");
                         tw.Close();
 
                         //ClearSwissBoxes();
@@ -412,11 +416,37 @@ namespace Swiss_Selector //version 1.3
                     openInvToolStripMenuItem.Checked = false;
                     dontOpenInvToolStripMenuItem.Checked = true;
                 }
+                Read("showIntro", swissPath);
+                if (currentKey == "true")
+                {
+                    showIntroToolStripMenuItem.Checked = true;
+                    dontShowIntroToolStripMenuItem.Checked = false;
+                }
+                else
+                {
+                    showIntroToolStripMenuItem.Checked = false;
+                    dontShowIntroToolStripMenuItem.Checked = true;
+                }
+                Read("spawnIsExamined", swissPath);
+                if (currentKey == "true")
+                {
+                    examinedOnSpawnToolStripMenuItem.Checked = true;
+                    notExaminedOnSpawnToolStripMenuItem.Checked = false;
+                }
+                else
+                {
+                    examinedOnSpawnToolStripMenuItem.Checked = false;
+                    notExaminedOnSpawnToolStripMenuItem.Checked = true;
+                }
             }
             else if (!File.Exists(swissPath))
             {
                 openInvToolStripMenuItem.Checked = false;
                 dontOpenInvToolStripMenuItem.Checked = false;
+                showIntroToolStripMenuItem.Checked = false;
+                dontShowIntroToolStripMenuItem.Checked = false;
+                examinedOnSpawnToolStripMenuItem.Checked = false;
+                notExaminedOnSpawnToolStripMenuItem.Checked = false;
 
             }
         }
@@ -563,6 +593,7 @@ namespace Swiss_Selector //version 1.3
                 ReadKeys("RotateEngineLeft", comboBox23);
                 ReadKeys("CarIsExamined", comboBox25);
                 ReadKeys("PartIsExamined", comboBox26);
+                comboBox27.SelectedItem = "Delete";
             }
             else
             {
@@ -1200,6 +1231,67 @@ namespace Swiss_Selector //version 1.3
                 ClearNums();
             }
         }
+        private void ExaminedOnSpawnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(swissPath))
+            {
+                examinedOnSpawnToolStripMenuItem.Checked = true;
+                notExaminedOnSpawnToolStripMenuItem.Checked = false;
+                Writeini("spawnIsExamined", "true", swissPath);
+                listBox3.Items.Clear();
+                ModName2(listBox3, swissPath);
+            }
+            else
+            {
+                examinedOnSpawnToolStripMenuItem.Checked = false;
+            }
+        }
+        private void NotExaminedOnSpawnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(swissPath))
+            {
+                examinedOnSpawnToolStripMenuItem.Checked = false;
+                notExaminedOnSpawnToolStripMenuItem.Checked = true;
+                Writeini("spawnIsExamined", "false", swissPath);
+                listBox3.Items.Clear();
+                ModName2(listBox3, swissPath);
+            }
+            else
+            {
+                notExaminedOnSpawnToolStripMenuItem.Checked = false;
+            }
+        }
+        private void ShowIntroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(swissPath))
+            {
+                showIntroToolStripMenuItem.Checked = true;
+                dontShowIntroToolStripMenuItem.Checked = false;
+                Writeini("showIntro", "true", swissPath);
+                listBox3.Items.Clear();
+                ModName2(listBox3, swissPath);
+            }
+            else
+            {
+                showIntroToolStripMenuItem.Checked = false;
+            }
+        }
+
+        private void DontShowIntroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(swissPath))
+            {
+                showIntroToolStripMenuItem.Checked = false;
+                dontShowIntroToolStripMenuItem.Checked = true;
+                Writeini("showIntro", "false", swissPath);
+                listBox3.Items.Clear();
+                ModName2(listBox3, swissPath);
+            }
+            else
+            {
+                dontShowIntroToolStripMenuItem.Checked = false;
+            }
+        }
         private void DontOpenInvToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (File.Exists(swissPath))
@@ -1360,6 +1452,11 @@ namespace Swiss_Selector //version 1.3
             {
                 AppendLine(textBox1, "Save.txt not found, nothing deleted");
             }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("steam://rungameid/645630");
         }
     }
 }

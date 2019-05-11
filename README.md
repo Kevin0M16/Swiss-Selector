@@ -1,7 +1,9 @@
-![Alt text](/SwissSelector1.3.png?raw=true "Optional Title")
+![Alt text](/SwissSelector1.4.png?raw=true "Optional Title")
 
 # Swiss-Selector
 CMS 2018 Mod<br />
+
+<i>Updated to 1.4 -- added start game button, fixed junkyard generator, added ability to delete car at garage entrance 1 and delete barns </i><br /><br />
 
 <i>Updated to 1.3 -- Added entire car is examined and part is examined. Fixed some file locating issues</i><br /><br />
 <i>Updated to 1.2 -- on first startup, tool now prompts to create ini files and comboboxes are greyed out<br />
