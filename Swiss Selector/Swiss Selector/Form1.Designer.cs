@@ -129,6 +129,8 @@ namespace Swiss_Selector
             this.label34 = new System.Windows.Forms.Label();
             this.comboBox27 = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -157,13 +159,13 @@ namespace Swiss_Selector
             this.listBox2.ItemHeight = 19;
             this.listBox2.Location = new System.Drawing.Point(278, 30);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(158, 194);
+            this.listBox2.Size = new System.Drawing.Size(158, 213);
             this.listBox2.TabIndex = 1;
             // 
             // label28
             // 
             this.label28.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(791, 191);
+            this.label28.Location = new System.Drawing.Point(786, 183);
             this.label28.Margin = new System.Windows.Forms.Padding(0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(100, 27);
@@ -179,7 +181,7 @@ namespace Swiss_Selector
             0,
             0,
             0});
-            this.numericUpDown5.Location = new System.Drawing.Point(708, 191);
+            this.numericUpDown5.Location = new System.Drawing.Point(703, 183);
             this.numericUpDown5.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -194,7 +196,7 @@ namespace Swiss_Selector
             // label27
             // 
             this.label27.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(791, 100);
+            this.label27.Location = new System.Drawing.Point(786, 92);
             this.label27.Margin = new System.Windows.Forms.Padding(0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(128, 27);
@@ -211,7 +213,7 @@ namespace Swiss_Selector
             0,
             0,
             65536});
-            this.numericUpDown4.Location = new System.Drawing.Point(708, 100);
+            this.numericUpDown4.Location = new System.Drawing.Point(703, 92);
             this.numericUpDown4.Maximum = new decimal(new int[] {
             1,
             0,
@@ -226,7 +228,7 @@ namespace Swiss_Selector
             // label26
             // 
             this.label26.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(791, 69);
+            this.label26.Location = new System.Drawing.Point(786, 61);
             this.label26.Margin = new System.Windows.Forms.Padding(0);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(100, 27);
@@ -242,7 +244,7 @@ namespace Swiss_Selector
             0,
             0,
             0});
-            this.numericUpDown3.Location = new System.Drawing.Point(708, 69);
+            this.numericUpDown3.Location = new System.Drawing.Point(703, 61);
             this.numericUpDown3.Maximum = new decimal(new int[] {
             500000,
             0,
@@ -257,7 +259,7 @@ namespace Swiss_Selector
             // label25
             // 
             this.label25.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(791, 38);
+            this.label25.Location = new System.Drawing.Point(786, 30);
             this.label25.Margin = new System.Windows.Forms.Padding(0);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(100, 27);
@@ -273,7 +275,7 @@ namespace Swiss_Selector
             0,
             0,
             0});
-            this.numericUpDown2.Location = new System.Drawing.Point(708, 38);
+            this.numericUpDown2.Location = new System.Drawing.Point(703, 30);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -288,7 +290,7 @@ namespace Swiss_Selector
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(791, 134);
+            this.label8.Location = new System.Drawing.Point(786, 126);
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 27);
@@ -304,7 +306,7 @@ namespace Swiss_Selector
             0,
             0,
             0});
-            this.numericUpDown1.Location = new System.Drawing.Point(708, 131);
+            this.numericUpDown1.Location = new System.Drawing.Point(703, 123);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -343,7 +345,7 @@ namespace Swiss_Selector
             this.listBox3.ItemHeight = 19;
             this.listBox3.Location = new System.Drawing.Point(442, 30);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(245, 194);
+            this.listBox3.Size = new System.Drawing.Size(245, 213);
             this.listBox3.TabIndex = 2;
             // 
             // label9
@@ -1728,7 +1730,7 @@ namespace Swiss_Selector
             // label30
             // 
             this.label30.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(791, 159);
+            this.label30.Location = new System.Drawing.Point(786, 151);
             this.label30.Margin = new System.Windows.Forms.Padding(0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(142, 27);
@@ -1744,7 +1746,7 @@ namespace Swiss_Selector
             0,
             0,
             0});
-            this.numericUpDown6.Location = new System.Drawing.Point(708, 161);
+            this.numericUpDown6.Location = new System.Drawing.Point(703, 153);
             this.numericUpDown6.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -1772,11 +1774,11 @@ namespace Swiss_Selector
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(362, 226);
+            this.label31.Location = new System.Drawing.Point(52, 838);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(185, 29);
+            this.label31.Size = new System.Drawing.Size(203, 29);
             this.label31.TabIndex = 62;
-            this.label31.Text = "Swiss Selector 1.4";
+            this.label31.Text = "Swiss Selector 1.4.1";
             // 
             // pictureBox1
             // 
@@ -1922,13 +1924,36 @@ namespace Swiss_Selector
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(703, 217);
+            this.textBox2.MaxLength = 9;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(95, 26);
+            this.textBox2.TabIndex = 71;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(804, 217);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(110, 26);
+            this.button3.TabIndex = 72;
+            this.button3.Text = "Set Plate";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1256, 857);
+            this.ClientSize = new System.Drawing.Size(1256, 876);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label34);
             this.Controls.Add(this.comboBox27);
@@ -2009,7 +2034,7 @@ namespace Swiss_Selector
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Swiss Selector 1.4";
+            this.Text = "Swiss Selector 1.4.1";
             this.Shown += new System.EventHandler(this.Form1_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
@@ -2162,6 +2187,8 @@ namespace Swiss_Selector
         private System.Windows.Forms.ToolStripMenuItem examinedOnSpawnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem notExaminedOnSpawnToolStripMenuItem;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

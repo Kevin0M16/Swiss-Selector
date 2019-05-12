@@ -38,7 +38,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(339, 172);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Swiss Selector Version 1.4\r\n\r\n1.4 Bult May 2019\r\n\r\nCreated by: Kevin_M16\r\n\r\n";
+            this.label1.Text = "Swiss Selector Version 1.4.1\r\n\r\n1.4.1 Bult May 2019\r\n\r\nCreated by: Kevin_M16\r\n\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 

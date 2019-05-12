@@ -43,6 +43,7 @@ namespace Swiss_Selector //version 1.4
                 listBox3.Items.Clear();
                 ModName(listBox2, listBox3, swissPath);
                 ModName(listBox4, listBox5, keysPath);
+                GetPlate(textBox2, swissPath);                
             }
             else
             {
@@ -73,6 +74,7 @@ namespace Swiss_Selector //version 1.4
                         tw.WriteLine("showInventory=true");
                         tw.WriteLine("showIntro=true");
                         tw.WriteLine("spawnIsExamined=true");
+                        tw.WriteLine("licensePlate=Kevin0M16");
                         tw.Close();
 
                         //ClearSwissBoxes();
@@ -115,6 +117,7 @@ namespace Swiss_Selector //version 1.4
                         tw.WriteLine("showInventory=true");
                         tw.WriteLine("showIntro=true");
                         tw.WriteLine("spawnIsExamined=true");
+                        tw.WriteLine("licensePlate=Kevin0M16");
                         tw.Close();
 
                         //ClearSwissBoxes();
@@ -456,6 +459,35 @@ namespace Swiss_Selector //version 1.4
                 source.Text = value;
             else
                 source.AppendText("\r\n" + value);
+        }        
+        private void GetPlate(TextBox txtb1, string path)
+        {
+            try
+            {
+                if (File.Exists(path))
+                {
+
+                    string[] array = File.ReadAllLines(path).Where(x => !string.IsNullOrWhiteSpace(x)).ToArray();
+                    for (int i = 0; i < array.Length; i++)
+                    {
+                        string a = array[i].Substring(0, array[i].IndexOf("="));
+                        string s = array[i].Substring(array[i].IndexOf("=") + 1);
+
+                        if (a == "licensePlate")
+                        {
+                            txtb1.Text = s;
+                        }
+
+                    }
+                    return;
+                }
+            }
+            catch
+            {
+                AppendLine(textBox1, "ini File Corrupted! See Log!");
+                checker = 1;
+                return;
+            }
         }
         private void ModName2(ListBox lsb1, string path)
         {
@@ -1453,10 +1485,21 @@ namespace Swiss_Selector //version 1.4
                 AppendLine(textBox1, "Save.txt not found, nothing deleted");
             }
         }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("steam://rungameid/645630");
+        }
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(swissPath))
+            {
+                Writeini("licensePlate", textBox2.Text, swissPath);
+                textBox2.Clear();
+                GetPlate(textBox2, swissPath);
+                AppendLine(textBox1, "License Plate updated...");
+                ClearSwissBoxes();
+                LoadSwiss();
+            }
         }
     }
 }

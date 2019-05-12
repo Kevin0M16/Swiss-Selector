@@ -1,10 +1,13 @@
-![Alt text](/SwissSelector1.4.png?raw=true "Optional Title")
+![Alt text](/SwissSelector1.4.1.png?raw=true "Optional Title")
 
 # Swiss-Selector
 CMS 2018 Mod</br>
 Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded versoin of the original dll file.
 
 ## Update Notes
+
+* **Updated to 1.4.1** -- Added ability to set license plates on Spawncar and Fixed bug that deleted car when deleting barns
+
 * **Updated to 1.4** --
   * New button to launch CMS2018
   * Fixed junkyard generator - if you use it, be patient, it will load but takes a few.
