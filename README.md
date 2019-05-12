@@ -18,7 +18,7 @@ Here is an overview of what you need to get started with Swiss Selector
 
 The current version of Swiss Selector requires Car Mechanic Simulator 2018 version 1.6.1
 
-* **Always back up all your game data and saves before any mods**
+:exclamation: **Always back up all your game data and saves before any mods**
 
 ### Installation and setup
 1. Backup your Managed Folder:  Steam\steamapps\common\Car Mechanic Simulator 2018\cms2018_Data\Managed<br />
@@ -42,10 +42,10 @@ Give examples
 ```
 ## Default Key Functions
 
-MAKE A BACKUP OF YOUR SAVE-GAME AND DLL!<br />
-SPAWN CAR DELETES ANY CAR AT GARAGE ENTRANCE A/1! MAKE SURE ITS EMPTY FIRST!<br />
+* :grey_exclamation: **MAKE A BACKUP OF YOUR SAVE-GAME AND DLL!**
+* :grey_exclamation: **SPAWN CAR DELETES ANY CAR AT GARAGE ENTRANCE A/1! MAKE SURE ITS EMPTY FIRST!**
 
-#### Keys:
+#### :computer: :key: Keys:
 * Keypad 1 - Spawn car at Garage Entrance A or 1
 * Keypad 2 - Increase Config version of the car
 * Keypad 3 - Decrease Config version of the car
