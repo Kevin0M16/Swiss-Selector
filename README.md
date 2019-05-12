@@ -5,7 +5,14 @@ CMS 2018 Mod</br>
 Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded versoin of the original dll file.
 
 ## Update Notes
-* <i>**Updated to 1.4** -- added start game button, fixed junkyard generator, added ability to delete car at garage entrance 1 and delete barns </i>
+* **Updated to 1.4** 
+  * New button to launch CMS2018
+  * Fixed junkyard generator - if you use it, be patient, it will load but takes a few.
+  * Ability to delete a car at garage entrance 1
+  * Ability to delete all barns with shift + delete
+  * Ability to set a preference to skip the Intro
+  * Ability to set a preference to spawn a car with or without all parts examined
+
 * <i>**Updated to 1.3** -- Added entire car is examined and part is examined. Fixed some file locating issues</i>
 * <i>**Updated to 1.2** -- on first startup, tool now prompts to create ini files and comboboxes are greyed out
 Added a select under File to delete all files created by tool</i>
