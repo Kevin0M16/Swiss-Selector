@@ -85,7 +85,7 @@ SPAWN CAR DELETES ANY CAR AT GARAGE ENTRANCE A/1! MAKE SURE ITS EMPTY FIRST!<br 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details
 
 ## Acknowledgments
 
