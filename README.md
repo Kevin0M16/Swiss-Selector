@@ -4,7 +4,7 @@
 
 # Swiss-Selector
 CMS 2018 Mod</br>
-Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded versoin of the original dll file.
+Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded version of the original dll file.
 
 ## Update Notes
 
@@ -22,6 +22,36 @@ Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded verso
 * <i>**Updated to 1.2** -- on first startup, tool now prompts to create ini files and comboboxes are greyed out
 Added a select under File to delete all files created by tool</i>
 * <i>**Updated to 1.1** -- added small image preview of mod cars and added 24 cars to junkyard</i>
+
+## Features
+* Custom key mapping
+* Swiss Selector grabs all Car names and if selected, sets this car for Spawn without manual editing the ini.
+* Added the preference to Open Inventory if "duplicate part" is used. Preferences\Insert Part Options
+* All quality and condition for duplicated parts is set within the Swiss Selector.
+* All changes made on the Swiss Selector write the necessary ini files in real time automatically
+* Built in log textbox for troubleshooting issues
+* Image Preview of mod cars
+* Option to skip Intro
+* Ability to:
+  * set parts or entire car to examined for condition
+  * duplicate the engine on the engine stand
+  * duplicate every part on the engine that is on the engine stand
+  * set your money amount
+  * add money
+  * add XP
+  * add Barns
+  * delete all Barns
+  * delete a car at Garage Entrance 1
+  * generate a new Junkyard
+  * Increase or Decrease player speed
+  * Spawn a Car
+  * Change config file to spawn
+  * Change condition of car on mouseover
+  * Change color of car on mouseover
+
+
+
+
 
 ## Getting Started
 Here is an overview of what you need to get started with Swiss Selector
