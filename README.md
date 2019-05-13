@@ -8,6 +8,14 @@ Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded versi
 
 ## Update Notes
 
+* **Updated to 1.5** --
+  * Added a new compact view mode - Mini Mode can be selected at:
+    * File --> Mini Mode, Closing in Mini Mode Saves this preference.
+  * You can now select your spawncar location either Garage Entrance 1 or Paintshop at:
+    * Prefererences --> Spawn Options --> Spawn Car Locations
+  * Removed the delete car ability, this caused many errors
+  * Updated icon on top left of Window.
+
 * **Updated to 1.4.1** -- Added ability to set license plates on Spawncar and Fixed bug that deleted car when deleting barns
 
 * **Updated to 1.4** --
