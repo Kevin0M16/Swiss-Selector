@@ -6,6 +6,10 @@
 CMS 2018 Mod</br>
 Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded version of the original dll file.
 
+<a href="/swissselector.zip" download>
+  <img src="dbutton.png" height="50" width="158" alt="download">
+</a>
+
 ## Update Notes
 
 * **Updated to 1.5** --
@@ -56,9 +60,6 @@ Added a select under File to delete all files created by tool</i>
   * Change config file to spawn
   * Change condition of car on mouseover
   * Change color of car on mouseover
-
-
-
 
 
 ## Getting Started
