@@ -1,6 +1,7 @@
-<img src= "/SwissSelector1.5_big.png"/>
-
-<img src= "/SwissSelector1.5_mini.png"/>
+![Pic](/SwissSelector1.5_big.png)
+![Pic](/SwissSelector1.5_mini.png)
+<img src= "../SwissSelector1.5_big.png"/>
+<img src= "../SwissSelector1.5_mini.png"/>
 
 # Swiss-Selector
 CMS 2018 Mod</br>
