@@ -2,7 +2,8 @@
 <img src= "SwissSelector1.5_mini.png"/>
 
 # Swiss-Selector
-CMS 2018 Mod</br>
+CMS 2018 Mod
+
 Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded version of the original dll file.
 
 <a href="Swiss-Selector.zip" download>
