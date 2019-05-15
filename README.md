@@ -1,6 +1,6 @@
 <img src= "SwissSelector1.5_big.png"/>
 <img src= "SwissSelector1.5_mini.png"/>
-<link rel="shortcut icon" href="/assets/img/favicon.ico">
+<link rel="shortcut icon" href="https://github.com/Kevin0M16/Swiss-Selector/blob/master/Swiss%20Selector/Swiss%20Selector/ss3.ico">
 
 # Swiss-Selector
 CMS 2018 Mod
