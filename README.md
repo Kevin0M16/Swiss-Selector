@@ -1,6 +1,6 @@
-![Alt text](/SwissSelector1.5_big.png?raw=true "Optional Title")
+<img src= "/SwissSelector1.5_big.png?raw=true">
 
-![Alt text](/SwissSelector1.5_mini.png?raw=true "Optional Title")
+<img src= "/SwissSelector1.5_mini.png?raw=true">
 
 # Swiss-Selector
 CMS 2018 Mod</br>
