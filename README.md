@@ -7,11 +7,11 @@ CMS 2018 Mod
 
 Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded version of the original dll file.
 
-<a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/Swiss-Selector.zip"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[1].name&style=for-the-badge" alt="download"></img></a>
+<a href="https://github.com/Kevin0M16/Swiss-Selector/releases/download/latest/Swiss.Selector.exe"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[1].name&style=for-the-badge" alt="download"></img></a>
 
-<a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/Assembly-CSharp-firstpass.dll"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[0].name&style=plastic" alt="download"/></a>
+<a href="https://github.com/Kevin0M16/Swiss-Selector/releases/download/latest/Assembly-CSharp-firstpass.dll"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[0].name&style=plastic" alt="download"/></a>
 
-<a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/Swiss.Selector.exe"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[2].name&style=plastic" alt="download"/></a>
+<a href="https://github.com/Kevin0M16/Swiss-Selector/releases/download/latest/Swiss.Selector.exe"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[2].name&style=plastic" alt="download"/></a>
 
 ## Update Notes
 
