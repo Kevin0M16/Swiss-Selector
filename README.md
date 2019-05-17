@@ -77,20 +77,20 @@ The current version of Swiss Selector requires Car Mechanic Simulator 2018 versi
 :exclamation: **Always back up all your game data and saves before any mods**
 
 ### Installation and setup
- 1. Backup your Managed Folder:  Steam\steamapps\common\Car Mechanic Simulator 2018\cms2018_Data\Managed<br />
- 2. Backup your saves folder: User\AppData\LocalLow\Red Dot Games\Car Mechanic Simulator 2018<br />
- 3. Backup your dll file: Assembly-CSharp-firstpass.dll in the \Managed Folder<br />
- 4. Place Swiss Selector.exe in Steam\steamapps\common\Car Mechanic Simulator 2018\cms2018_Data\Managed folder<br />
- 5. Replace Assembly-CSharp-firstpass.dll with the dll from this repository<br />
- 6.  Create a shortcut to Swiss Selector.exe and place it on your desktop<br />
- 7. Remove any existing ini files from the \Managed directory<br />
- 8. Run Swiss Selector.exe<br />
- 9. When prompted, build swiss.ini and keys.ini note: Swiss Selector must be in \Managed folder!<br />
- 10. If all fields populate then continue, otherwise manually select \Managed folder under File<br />
- 11. Check if the car names have populated on the left. If car names listbox is empty, click Advanced\manually select \Managed location and Select your root directory of all your car files.<br />
- 12. Now you can select your car to spawn, money and xp amounts, and key mapping. Be sure to save your key bindings!<br />
- 13. Leave Swiss Selector Open and then Open CMS 2018. Action keys are listed on Main Form.<br />
- 14. Enjoy!<br />
+    1. Backup your Managed Folder:  Steam\steamapps\common\Car Mechanic Simulator 2018\cms2018_Data\Managed<br />
+    2. Backup your saves folder: User\AppData\LocalLow\Red Dot Games\Car Mechanic Simulator 2018<br />
+    3. Backup your dll file: Assembly-CSharp-firstpass.dll in the \Managed Folder<br />
+    4. Place Swiss Selector.exe in Steam\steamapps\common\Car Mechanic Simulator 2018\cms2018_Data\Managed folder<br />
+    5. Replace Assembly-CSharp-firstpass.dll with the dll from this repository<br />
+    6.  Create a shortcut to Swiss Selector.exe and place it on your desktop<br />
+    7. Remove any existing ini files from the \Managed directory<br />
+    8. Run Swiss Selector.exe<br />
+    9. When prompted, build swiss.ini and keys.ini note: Swiss Selector must be in \Managed folder!<br />
+    10. If all fields populate then continue, otherwise manually select \Managed folder under File<br />
+    11. Check if the car names have populated on the left. If car names listbox is empty, click Advanced\manually select \Managed   location and Select your root directory of all your car files.<br />
+    12. Now you can select your car to spawn, money and xp amounts, and key mapping. Be sure to save your key bindings!<br />
+    13. Leave Swiss Selector Open and then Open CMS 2018. Action keys are listed on Main Form.<br />
+    14. Enjoy!<br />
 
 
 ```
