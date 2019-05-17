@@ -9,11 +9,13 @@ Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded versi
 
 ## Download
 
-<a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/download/Swiss-Selector.zip"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[1].name&style=for-the-badge" alt="download"/></a>
+<pre>  <a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/download/Swiss-Selector.zip"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[1].name&style=for-the-badge" alt="download"/></a></pre>
 
-<!--<a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/download/Assembly-CSharp-firstpass.dll"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[0].name&style=plastic" alt="download"/></a>
+<!--<a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/download/Assembly-CSharp-firstpass.dll"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[0].name&style=plastic" alt="download"/></a></pre>
 
-<a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/download/Swiss.Selector.exe"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[2].name&style=plastic" alt="download"/></a>-->
+<pre>  <a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/download/Swiss.Selector.exe"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[2].name&style=plastic" alt="download"/></a>--> 
+### Optional:
+<pre>  <a href="https://drive.google.com/open?id=14KZkmiyXTpEYJoY10v_utPYAD3ZMWK3U"><img src="https://img.shields.io/badge/download-original cars-<COLOR>.svg"/></a></pre>
 
 ## Update Notes
 
@@ -73,6 +75,7 @@ Here is an overview of what you need to get started with Swiss Selector
 ### Requirements
 
 The current version of Swiss Selector requires Car Mechanic Simulator 2018 version 1.6.1
+ - [x] modded dll required - download .zip
 
 :exclamation: **Always back up all your game data and saves before any mods**
 
