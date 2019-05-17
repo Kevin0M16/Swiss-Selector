@@ -12,10 +12,10 @@ Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded versi
 <pre>  <a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/download/Swiss-Selector.zip"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[1].name&style=for-the-badge" alt="download"/></a></pre>
 
 <!--<a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/download/Assembly-CSharp-firstpass.dll"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[0].name&style=plastic" alt="download"/></a></pre>
-
 <a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/download/Swiss.Selector.exe"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[2].name&style=plastic" alt="download"/></a>--> 
+
 ### Optional:
-<pre>  <a href="https://drive.google.com/open?id=14KZkmiyXTpEYJoY10v_utPYAD3ZMWK3U"><img src="https://img.shields.io/badge/Download-Original Cars-<COLOR>.svg"/></a><br /><b>  Note: extract Cars directory anywhere under steam folder</pre>
+<pre>  <a href="https://drive.google.com/open?id=14KZkmiyXTpEYJoY10v_utPYAD3ZMWK3U"><img src="https://img.shields.io/badge/Download-Original Cars-<COLOR>.svg"/></a><br />  Note: extract Cars directory anywhere under steam folder</pre>
 
 ## Update Notes
 
