@@ -15,7 +15,7 @@ Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded versi
 <a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/download/Swiss.Selector.exe"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[2].name&style=plastic" alt="download"/></a>--> 
 
 ### Optional:
-<pre>  <a href="https://drive.google.com/open?id=14KZkmiyXTpEYJoY10v_utPYAD3ZMWK3U"><img src="https://img.shields.io/badge/Download-Original Cars-<COLOR>.svg"/></a><br />  Note: extract Cars directory anywhere under steam folder</pre>
+<pre>  <a href="https://drive.google.com/open?id=14KZkmiyXTpEYJoY10v_utPYAD3ZMWK3U"><img src="https://img.shields.io/badge/Download-Original Cars PNG files-<COLOR>.svg"/></a><br />  Note: extract Cars directory anywhere under steam folder</pre>
 
 ## Update Notes
 
@@ -69,17 +69,20 @@ Added a select under File to delete all files created by tool</i>
   * Change color of car on mouseover
 
 
-## Getting Started
-Here is an overview of what you need to get started with Swiss Selector
+<!--## Getting Started
+Here is an overview of what you need to get started with Swiss Selector-->
 
-### Requirements
+## Installation and Setup
+#### Requirements
 
-The current version of Swiss Selector requires Car Mechanic Simulator 2018 version 1.6.1
+The current version of Swiss Selector requires Car Mechanic Simulator 2018 version 1.6.1 and the modded dll file included in the .zip
+ - [x] Car Mechanic Simulator 2018 version 1.6.1
  - [x] modded dll required - download .zip
 
-:exclamation: **Always back up all your game data and saves before any mods**
+:exclamation: **Always back up all your game data and saves before any mods**<br />
+:exclamation: **Please follow directions! I'm NOT responsible for lost saves or corrupt game files**
 
-### Installation and setup
+#### Steps:
    1. Backup your Managed Folder:  Steam\steamapps\common\Car Mechanic Simulator 2018\cms2018_Data\Managed<br />
    2. Backup your saves folder: User\AppData\LocalLow\Red Dot Games\Car Mechanic Simulator 2018<br />
    3. Backup your dll file: Assembly-CSharp-firstpass.dll in the \Managed Folder<br />
