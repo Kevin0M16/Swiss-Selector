@@ -71,9 +71,10 @@ namespace Swiss_Selector
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -84,8 +85,8 @@ namespace Swiss_Selector
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -437,7 +438,7 @@ namespace Swiss_Selector
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(474, 374);
+            this.label31.Location = new System.Drawing.Point(474, 382);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(150, 29);
             this.label31.TabIndex = 62;
@@ -454,7 +455,7 @@ namespace Swiss_Selector
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(483, 293);
+            this.button2.Location = new System.Drawing.Point(483, 301);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(147, 29);
             this.button2.TabIndex = 70;
@@ -465,7 +466,7 @@ namespace Swiss_Selector
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(6, 153);
+            this.textBox2.Location = new System.Drawing.Point(271, 452);
             this.textBox2.MaxLength = 9;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(95, 22);
@@ -475,7 +476,7 @@ namespace Swiss_Selector
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(107, 153);
+            this.button3.Location = new System.Drawing.Point(372, 452);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(82, 22);
             this.button3.TabIndex = 72;
@@ -491,7 +492,7 @@ namespace Swiss_Selector
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(361, 43);
+            this.textBox1.Size = new System.Drawing.Size(361, 51);
             this.textBox1.TabIndex = 73;
             this.textBox1.WordWrap = false;
             // 
@@ -502,43 +503,32 @@ namespace Swiss_Selector
             this.tabControl1.Location = new System.Drawing.Point(2, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(641, 509);
+            this.tabControl1.Size = new System.Drawing.Size(641, 508);
             this.tabControl1.TabIndex = 74;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.listBox1);
             this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.textBox2);
             this.tabPage1.Controls.Add(this.pictureBox1);
             this.tabPage1.Controls.Add(this.label31);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(633, 483);
+            this.tabPage1.Size = new System.Drawing.Size(633, 482);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Set Cars / Amounts";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(633, 483);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.numericUpDown1);
-            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.numericUpDown5);
-            this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label28);
             this.groupBox1.Controls.Add(this.numericUpDown2);
             this.groupBox1.Controls.Add(this.label27);
@@ -548,12 +538,23 @@ namespace Swiss_Selector
             this.groupBox1.Controls.Add(this.numericUpDown3);
             this.groupBox1.Controls.Add(this.numericUpDown4);
             this.groupBox1.Controls.Add(this.label30);
-            this.groupBox1.Location = new System.Drawing.Point(269, 288);
+            this.groupBox1.Location = new System.Drawing.Point(269, 295);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(193, 186);
+            this.groupBox1.Size = new System.Drawing.Size(193, 153);
             this.groupBox1.TabIndex = 71;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Set Amounts";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(633, 483);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "File Preview (ini)";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -564,7 +565,17 @@ namespace Swiss_Selector
             this.groupBox2.Size = new System.Drawing.Size(386, 303);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Swiss.ini";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(527, 24);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(89, 20);
+            this.label34.TabIndex = 76;
+            this.label34.Text = "Version 1.6";
             // 
             // Form2
             // 
@@ -572,7 +583,8 @@ namespace Swiss_Selector
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(646, 540);
+            this.ClientSize = new System.Drawing.Size(646, 538);
+            this.Controls.Add(this.label34);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -594,9 +606,9 @@ namespace Swiss_Selector
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -678,6 +690,7 @@ namespace Swiss_Selector
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label34;
     }
 }
 
