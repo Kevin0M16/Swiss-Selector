@@ -17,33 +17,11 @@ Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded versi
 ### Optional:
 <pre>  <a href="https://drive.google.com/open?id=14KZkmiyXTpEYJoY10v_utPYAD3ZMWK3U"><img src="https://img.shields.io/badge/Download-Original Cars PNG files-<COLOR>.svg"/></a><br />  Note: extract Cars directory anywhere under steam folder</pre>
 
-## Update Notes
-
-* **Updated 1.5 for CMS 1.6.2** --
-  * Same Swiss Selector, just updated dll for CMS 1.6.2
-
-* **Updated to 1.5** --
-  * Added a new compact view mode - Mini Mode can be selected at:
-    * File --> Mini Mode, Closing in Mini Mode Saves this preference.
-  * You can now select your spawncar location either Garage Entrance 1 or Paintshop at:
-    * Prefererences --> Spawn Options --> Spawn Car Locations
-  * Removed the delete car ability, this caused many errors
-  * Updated icon on top left of Window.
-
-* **Updated to 1.4.1** -- Added ability to set license plates on Spawncar and Fixed bug that deleted car when deleting barns
-
-* **Updated to 1.4** --
-  * New button to launch CMS2018
-  * Fixed junkyard generator - if you use it, be patient, it will load but takes a few.
-  * Ability to delete a car at garage entrance 1
-  * Ability to delete all barns with shift + delete
-  * Ability to set a preference to skip the Intro
-  * Ability to set a preference to spawn a car with or without all parts examined
-
-* <i>**Updated to 1.3** -- Added entire car is examined and part is examined. Fixed some file locating issues</i>
-* <i>**Updated to 1.2** -- on first startup, tool now prompts to create ini files and comboboxes are greyed out
-Added a select under File to delete all files created by tool</i>
-* <i>**Updated to 1.1** -- added small image preview of mod cars and added 24 cars to junkyard</i>
+## Update V1.6 for CMS 1.6.2
+* New Look! Resized windows and added tabbed navigation
+  
+## Change Log
+* [Changelog](https://github.com/Kevin0M16/Swiss-Selector/blob/master/CHANGELOG.md) - For viewing version history.
 
 ## Features
 * Custom key mapping
@@ -91,7 +69,7 @@ The current version of Swiss Selector requires Car Mechanic Simulator 2018 versi
    3. Backup your dll file: Assembly-CSharp-firstpass.dll in the \Managed Folder<br />
    4. Place Swiss Selector.exe in Steam\steamapps\common\Car Mechanic Simulator 2018\cms2018_Data\Managed folder<br />
    5. Replace Assembly-CSharp-firstpass.dll with the dll from this repository<br />
-   6.  Create a shortcut to Swiss Selector.exe and place it on your desktop<br />
+   6. Create a shortcut to Swiss Selector.exe and place it on your desktop<br />
    7. Remove any existing ini files from the \Managed directory<br />
    8. Run Swiss Selector.exe<br />
    9. When prompted, build swiss.ini and keys.ini note: Swiss Selector must be in \Managed folder!<br />
