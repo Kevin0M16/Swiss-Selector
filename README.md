@@ -57,8 +57,8 @@ Here is an overview of what you need to get started with Swiss Selector-->
 ## Installation and Setup
 #### Requirements
 
-The current version of Swiss Selector requires Car Mechanic Simulator 2018 version 1.6.1 and the modded dll file included in the .zip
- - [x] Car Mechanic Simulator 2018 version 1.6.1
+The current version of Swiss Selector requires Car Mechanic Simulator 2018 version 1.6.2.1 and the modded dll file included in the .zip
+ - [x] Car Mechanic Simulator 2018 version 1.6.2.1
  - [x] modded dll required - download .zip
 
 :exclamation: **Always back up all your game data and saves before any mods**<br />
