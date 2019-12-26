@@ -1,5 +1,5 @@
-<img src= "SwissSelector1.5_big.png"/>
-<img src= "SwissSelector1.5_mini.png"/>
+<img src= "SwissSelector1.6_big.png"/>
+<img src= "SwissSelector1.6_mini.png"/>
 <link rel="shortcut icon" type="image/x-icon" href="ss3.ico">
 
 # Swiss-Selector
@@ -7,7 +7,9 @@ CMS 2018 Mod
 
 Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded version of the original dll file.
 
-## Download
+## Download - Update V1.6 for CMS 1.6.2 (DEC 25 2019)
+
+New Look! Resized windows and added tabbed navigation
 
 <pre>  <a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/download/Swiss-Selector.zip"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[0].name&style=for-the-badge" alt="download"/></a></pre>
 
@@ -15,11 +17,10 @@ Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded versi
 <a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/download/Swiss.Selector.exe"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[2].name&style=plastic" alt="download"/></a>--> 
 
 ### Optional:
-<pre>  <a href="https://drive.google.com/open?id=14KZkmiyXTpEYJoY10v_utPYAD3ZMWK3U"><img src="https://img.shields.io/badge/Download-Original Cars PNG files-<COLOR>.svg"/></a><br />  Note: extract Cars directory anywhere under steam folder</pre>
+<!--<pre>  <a href="https://drive.google.com/open?id=14KZkmiyXTpEYJoY10v_utPYAD3ZMWK3U"><img src="https://img.shields.io/badge/Download-Original Cars PNG files-<COLOR>.svg"/></a><br />  Note: extract Cars directory anywhere under steam folder</pre>-->
 
-## Update V1.6 for CMS 1.6.2
-* New Look! Resized windows and added tabbed navigation
-  
+Original Car png's now included in the zip file above.
+ 
 ## Change Log
 * [Changelog](https://github.com/Kevin0M16/Swiss-Selector/blob/master/CHANGELOG.md) - For viewing version history.
 
@@ -77,7 +78,8 @@ The current version of Swiss Selector requires Car Mechanic Simulator 2018 versi
    11. Check if the car names have populated on the left. If car names listbox is empty, click Advanced\manually select \Managed   location and Select your root directory of all your car files.<br />
    12. Now you can select your car to spawn, money and xp amounts, and key mapping. Be sure to save your key bindings!<br />
    13. Leave Swiss Selector Open and then Open CMS 2018. Action keys are listed on Main Form.<br />
-   14. Enjoy!<br />
+   14. Move the Cars directory anywhere under the Steam\ folder to get a preview of the stock cars. (Now included in zip file)
+   15. Enjoy!<br />
 
 ## Default Key Functions
 
@@ -129,4 +131,5 @@ This project is licensed under the MIT License - see the [LICENSE](/LICENSE) fil
 ## Acknowledgments
 
 * Thanks to the people of the Car Mechanic Simulator Modding forum on Steam
+* [Steam Community](https://steamcommunity.com/app/645630/discussions/1/1680315447982713687/) - CMS mod forum thread
 
