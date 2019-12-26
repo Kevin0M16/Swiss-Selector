@@ -42,8 +42,6 @@ Original Car png's now included in the zip file above.
   * add money
   * add XP
   * add Barns
-  * delete all Barns
-  * delete a car at Garage Entrance 1
   * generate a new Junkyard
   * Increase or Decrease player speed
   * Spawn a Car
