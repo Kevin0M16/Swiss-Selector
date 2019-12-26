@@ -33,6 +33,7 @@ Original Car png's now included in the zip file above.
 * Built in log textbox for troubleshooting issues
 * Image Preview of mod cars
 * Option to skip Intro
+* Change view mode from Big to Mini at File --> Mini Mode
 * Ability to:
   * set parts or entire car to examined for condition
   * duplicate the engine on the engine stand
@@ -77,7 +78,7 @@ The current version of Swiss Selector requires Car Mechanic Simulator 2018 versi
    10. If all fields populate then continue, otherwise manually select \Managed folder under File<br />
    11. Check if the car names have populated on the left. If car names listbox is empty, click Advanced\manually select \Managed   location and Select your root directory of all your car files.<br />
    12. Now you can select your car to spawn, money and xp amounts, and key mapping. Be sure to save your key bindings!<br />
-   13. Leave Swiss Selector Open and then Open CMS 2018. Action keys are listed on Main Form.<br />
+   13. Leave Swiss Selector Open and then Open CMS 2018. Action keys are listed on the Set Keys tab.<br />
    14. Move the Cars directory anywhere under the Steam\ folder to get a preview of the stock cars. (Now included in zip file)
    15. Enjoy!<br />
 
