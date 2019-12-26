@@ -1,12 +1,12 @@
 # Swiss-Selector CHANGELOG
 
-## V1.6 for CMS 1.6.2 (DEC 25 2019)
+## V1.6 for CMS 1.6.2.1 (DEC 25 2019)
 - Resized windows and added tabbed navigation
 
-## V1.5 for CMS 1.6.2 (MAY 2019)
-- Same Swiss Selector, just updated dll for CMS 1.6.2
+## V1.5 for CMS 1.6.2.1 (MAY 2019)
+- Same Swiss Selector, just updated dll for CMS 1.6.2.1
 
-## V1.5
+## V1.5 for CMS 1.6.2 
 - Added a new compact view mode - Mini Mode can be selected at: File --> Mini Mode, Closing in Mini Mode Saves this preference.
 - You can now select your spawncar location either Garage Entrance 1 or Paintshop at: Prefererences --> Spawn Options --> Spawn Car Locations
 - Removed the delete car ability, this caused many errors
