@@ -1,5 +1,8 @@
 # Swiss-Selector CHANGELOG
 
+## V1.6 for CMS 1.6.4 (JAN 24 2019)
+- Update dll file to 1.6.4
+
 ## V1.6 for CMS 1.6.2.1 (DEC 25 2019)
 - Resized windows and added tabbed navigation
 
