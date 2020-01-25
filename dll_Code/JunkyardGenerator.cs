@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-// Token: 0x02000523 RID: 1315
+// Token: 0x02000458 RID: 1112
 public class JunkyardGenerator : MonoBehaviour
 {
-	// Token: 0x06002564 RID: 9572 RVA: 0x00018635 File Offset: 0x00016835
+	// Token: 0x06002161 RID: 8545
 	public IEnumerator Generate()
 	{
 		ScreenFader.Get().SetBlack();
@@ -49,15 +49,15 @@ public class JunkyardGenerator : MonoBehaviour
 							carSpawnPositions.RemoveAt(index);
 							num++;
 						}
-						InteractiveObject[] componentsInChildren = this.Junkyard.GetComponentsInChildren<InteractiveObject>();
-						float num2 = UnityEngine.Random.Range(this.ItemsPercentage.x, this.ItemsPercentage.y);
-						List<InteractiveObject> items = componentsInChildren.ToList<InteractiveObject>();
-						float amountItems = Mathf.Floor(num2 / 100f * (float)items.Count((InteractiveObject x) => x.GetSpecialType() == IOSpecialType.Junk));
+						InteractiveObject[] ios = this.Junkyard.GetComponentsInChildren<InteractiveObject>();
+						float percentItems = UnityEngine.Random.Range(this.ItemsPercentage.x, this.ItemsPercentage.y);
+						List<InteractiveObject> items = ios.ToList<InteractiveObject>();
+						float amountItems = Mathf.Floor(percentItems / 100f * (float)items.Count((InteractiveObject x) => x.GetSpecialType() == IOSpecialType.Junk));
 						List<InteractiveObject> listOfSelectedJunks = new List<InteractiveObject>();
 						Debug.Log("Enable " + amountItems);
 						yield return new WaitForEndOfFrame();
-						int num3 = 0;
-						while ((float)num3 < amountItems)
+						int num2 = 0;
+						while ((float)num2 < amountItems)
 						{
 							int index2 = UnityEngine.Random.Range(0, items.Count);
 							InteractiveObject interactiveObject = items[index2];
@@ -70,9 +70,9 @@ public class JunkyardGenerator : MonoBehaviour
 							}
 							else
 							{
-								num3--;
+								num2--;
 							}
-							num3++;
+							num2++;
 						}
 						if (Singleton<DifficultyManager>.Instance.GetDifficultyLevel() != DifficultyLevel.Sandbox)
 						{
@@ -108,7 +108,7 @@ public class JunkyardGenerator : MonoBehaviour
 		goto IL_BE;
 	}
 
-	// Token: 0x06002565 RID: 9573 RVA: 0x00018644 File Offset: 0x00016844
+	// Token: 0x06002162 RID: 8546
 	private IEnumerator CreateCar(Transform t)
 	{
 		GameObject go2 = new GameObject();
@@ -119,25 +119,25 @@ public class JunkyardGenerator : MonoBehaviour
 		go2.GetComponent<CarLoader>().addInteractiveObject = true;
 		go2.GetComponent<CarLoader>().groundPosition = go2.transform;
 		go2.AddComponent<CarDebug>();
-		List<CarsIdWithConfig> carsSpawnsInScene = Singleton<CarBundleLoader>.Instance.GetCarsSpawnsInScene(SceneType.Junkyard);
-		CarsIdWithConfig carsIdWithConfig = carsSpawnsInScene[UnityEngine.Random.Range(0, carsSpawnsInScene.Count)];
+		List<CarsIdWithConfig> listOfAviableCars = Singleton<CarBundleLoader>.Instance.GetCarsSpawnsInScene(SceneType.Junkyard);
+		CarsIdWithConfig randomCar = listOfAviableCars[UnityEngine.Random.Range(0, listOfAviableCars.Count)];
 		CarLoader cl = go2.GetComponent<CarLoader>();
-		cl.ConfigVersion = carsIdWithConfig.ConfigVersion;
-		base.StartCoroutine(cl.LoadCar(carsIdWithConfig.CarID));
+		cl.ConfigVersion = randomCar.ConfigVersion;
+		base.StartCoroutine(cl.LoadCar(randomCar.CarID));
 		while (!cl.IsCarLoaded())
 		{
 			yield return new WaitForEndOfFrame();
 		}
-		LicensePlate randomLicensePlate = Singleton<GameInventory>.Instance.GetRandomLicensePlate();
-		cl.ChangeLicencePlateTexture(cl.GetCarPart("license_plate_front"), randomLicensePlate.name);
-		cl.ChangeLicencePlateTexture(cl.GetCarPart("license_plate_rear"), randomLicensePlate.name);
-		CarDoorOpenBlocker component = t.GetComponent<CarDoorOpenBlocker>();
-		if (component)
+		LicensePlate licensePlate = Singleton<GameInventory>.Instance.GetRandomLicensePlate();
+		cl.ChangeLicencePlateTexture(cl.GetCarPart("license_plate_front"), licensePlate.name);
+		cl.ChangeLicencePlateTexture(cl.GetCarPart("license_plate_rear"), licensePlate.name);
+		CarDoorOpenBlocker doorBlocker = t.GetComponent<CarDoorOpenBlocker>();
+		if (doorBlocker)
 		{
-			cl.LockObject("door_front_left", component.openLeftSide);
-			cl.LockObject("door_rear_left", component.openLeftSide);
-			cl.LockObject("door_front_right", component.openRightSide);
-			cl.LockObject("door_rear_right", component.openRightSide);
+			cl.LockObject("door_front_left", doorBlocker.openLeftSide);
+			cl.LockObject("door_rear_left", doorBlocker.openLeftSide);
+			cl.LockObject("door_front_right", doorBlocker.openRightSide);
+			cl.LockObject("door_rear_right", doorBlocker.openRightSide);
 		}
 		cl.PlaceAtPosition();
 		cl.SetRandomCarColor();
@@ -171,20 +171,20 @@ public class JunkyardGenerator : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06002566 RID: 9574 RVA: 0x00011F57 File Offset: 0x00010157
+	// Token: 0x06002163 RID: 8547
 	private void Awake()
 	{
 		SceneLoader.BlockProgress = true;
 		GameManager.IsGameReady = false;
 	}
 
-	// Token: 0x06002567 RID: 9575 RVA: 0x0001865A File Offset: 0x0001685A
+	// Token: 0x06002164 RID: 8548
 	private void Start()
 	{
 		base.StartCoroutine(this.Generate());
 	}
 
-	// Token: 0x06002568 RID: 9576 RVA: 0x000D269C File Offset: 0x000D089C
+	// Token: 0x06002165 RID: 8549
 	public void Update()
 	{
 		if (this.GenerateNewJunkyard)
@@ -199,64 +199,64 @@ public class JunkyardGenerator : MonoBehaviour
 		}
 	}
 
-	// Token: 0x04001E58 RID: 7768
+	// Token: 0x04001AA8 RID: 6824
 	[Header("Main")]
 	[SerializeField]
 	private bool shortPauseWhileFade;
 
-	// Token: 0x04001E59 RID: 7769
+	// Token: 0x04001AA9 RID: 6825
 	private Transform player;
 
-	// Token: 0x04001E5A RID: 7770
+	// Token: 0x04001AAA RID: 6826
 	[SerializeField]
 	private Transform[] CarSpawnPositions;
 
-	// Token: 0x04001E5B RID: 7771
+	// Token: 0x04001AAB RID: 6827
 	[SerializeField]
 	private Transform Junkyard;
 
-	// Token: 0x04001E5C RID: 7772
+	// Token: 0x04001AAC RID: 6828
 	[Header("Generate Settings")]
 	[SerializeField]
 	public bool GenerateNewJunkyard;
 
-	// Token: 0x04001E5D RID: 7773
+	// Token: 0x04001AAD RID: 6829
 	[SerializeField]
 	private Vector2 CarsPercentage = new Vector2(10f, 20f);
 
-	// Token: 0x04001E5E RID: 7774
+	// Token: 0x04001AAE RID: 6830
 	[SerializeField]
 	private Vector2 ItemsPercentage = new Vector2(60f, 80f);
 
-	// Token: 0x04001E5F RID: 7775
+	// Token: 0x04001AAF RID: 6831
 	[SerializeField]
 	private int percRandomPartsColor = 65;
 
-	// Token: 0x04001E60 RID: 7776
+	// Token: 0x04001AB0 RID: 6832
 	[SerializeField]
 	private Vector2 percRangeUnmountIO = new Vector2(30f, 100f);
 
-	// Token: 0x04001E61 RID: 7777
+	// Token: 0x04001AB1 RID: 6833
 	[SerializeField]
 	private int percMissingPanels = 25;
 
-	// Token: 0x04001E62 RID: 7778
+	// Token: 0x04001AB2 RID: 6834
 	[SerializeField]
 	private Vector2 rangeBodyPartsCondition = new Vector2(0.2f, 0.7f);
 
-	// Token: 0x04001E63 RID: 7779
+	// Token: 0x04001AB3 RID: 6835
 	[SerializeField]
 	private Vector2 rangePartsCondition = new Vector2(0.2f, 0.7f);
 
-	// Token: 0x04001E64 RID: 7780
+	// Token: 0x04001AB4 RID: 6836
 	[SerializeField]
 	private Vector2 rangeColorPartsCondition = new Vector2(0.2f, 0.7f);
 
-	// Token: 0x04001E65 RID: 7781
+	// Token: 0x04001AB5 RID: 6837
 	[SerializeField]
 	private Vector2 rangeJunkCondition = new Vector2(0.35f, 0.6f);
 
-	// Token: 0x04001E66 RID: 7782
+	// Token: 0x04001AB6 RID: 6838
 	[SerializeField]
 	private Vector2 rangeNegotationMod = new Vector2(0.5f, 1f);
 }
