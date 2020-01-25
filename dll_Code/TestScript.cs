@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-// Token: 0x020005F6 RID: 1526
+// Token: 0x020005F4 RID: 1524
 public class TestScript : MonoBehaviour
 {
-	// Token: 0x06002A94 RID: 10900 RVA: 0x0001B29D File Offset: 0x0001949D
+	// Token: 0x06002A8A RID: 10890 RVA: 0x0001B25D File Offset: 0x0001945D
 	public TestScript()
 	{
 		this.condition = 1f;
@@ -18,7 +18,7 @@ public class TestScript : MonoBehaviour
 		this.getFromKeysIni();
 	}
 
-	// Token: 0x06002A95 RID: 10901 RVA: 0x000FA53C File Offset: 0x000F873C
+	// Token: 0x06002A8B RID: 10891 RVA: 0x000F981C File Offset: 0x000F7A1C
 	public virtual void Update()
 	{
 		this.KeyPress();
@@ -41,12 +41,6 @@ public class TestScript : MonoBehaviour
 			UIManager.Get().ShowPopup("System:", "deleted " + shedsAvailable + " Barns, Now Reload Save", PopupType.Normal);
 			return;
 		}
-		if (Input.GetKeyUp(KeyCode.Delete) && CarLoaderPlaces.Get().GetOccupied(CarPlace.Entrance1) && !Input.GetKey(KeyCode.LeftShift) && !Input.GetKey(KeyCode.RightShift))
-		{
-			UIManager.Get().ShowPopup("System:", "Car exists at Entrance 1, deleting", PopupType.Normal);
-			this.carLoader = CarLoaderPlaces.Get().GetCarLoaderForPlace(CarPlace.Entrance1);
-			this.carLoader.DeleteCar(true);
-		}
 		if (this.keyListen(this.IncreseConfigKey, this.finder))
 		{
 			if (this.version > 0)
@@ -67,13 +61,21 @@ public class TestScript : MonoBehaviour
 		}
 		if (this.keyListen(this.RandomChangeCondition, this.finder))
 		{
-			((CarDebug)GameScript.Get().GetIOMouseOverCarLoader2().GetComponent(typeof(CarDebug))).Test_AuctionCar();
+			if (GameScript.Get().GetIOMouseOverCarLoader2() != null)
+			{
+				((CarDebug)GameScript.Get().GetIOMouseOverCarLoader2().GetComponent(typeof(CarDebug))).Test_AuctionCar();
+				UIManager.Get().ShowPopup("System:", "Random Condition Set", PopupType.Normal);
+			}
 			this.finder = null;
 			return;
 		}
 		if (this.keyListen(this.RandomChangeColor, this.finder) && GameScript.Get().GetIOMouseOverCarLoader2())
 		{
-			GameScript.Get().GetIOMouseOverCarLoader2().SetRandomCarColor();
+			if (GameScript.Get().GetIOMouseOverCarLoader2() != null)
+			{
+				GameScript.Get().GetIOMouseOverCarLoader2().SetRandomCarColor();
+				UIManager.Get().ShowPopup("System:", "Random Color Set", PopupType.Normal);
+			}
 			this.finder = null;
 			return;
 		}
@@ -82,8 +84,8 @@ public class TestScript : MonoBehaviour
 			if (GameScript.Get().GetIOMouseOverCarLoader2() != null)
 			{
 				GameScript.Get().GetIOMouseOverCarLoader2().ExamineAllParts();
+				UIManager.Get().ShowPopup("System:", "Car is Examined", PopupType.Normal);
 			}
-			UIManager.Get().ShowPopup("System:", "Car is Examined", PopupType.Normal);
 			this.finder = null;
 			return;
 		}
@@ -92,8 +94,8 @@ public class TestScript : MonoBehaviour
 			if (GameScript.Get().GetPartMouseOver() != null)
 			{
 				GameScript.Get().GetPartMouseOver().SetIsExamined(true);
+				UIManager.Get().ShowPopup("System:", "Part is Examined", PopupType.Normal);
 			}
-			UIManager.Get().ShowPopup("System:", "Part is Examined", PopupType.Normal);
 			this.finder = null;
 			return;
 		}
@@ -107,7 +109,7 @@ public class TestScript : MonoBehaviour
 		if (this.keyListen(this.SetMileage, this.finder))
 		{
 			this.getFromIni();
-			if (GameScript.Get().GetIOMouseOverCarLoader2())
+			if (GameScript.Get().GetIOMouseOverCarLoader2() != null)
 			{
 				GameScript.Get().GetIOMouseOverCarLoader2().SetMileage(this.mileage);
 				UIManager.Get().ShowPopup("System:", "Mileage set to " + this.mileage, PopupType.Normal);
@@ -125,8 +127,11 @@ public class TestScript : MonoBehaviour
 		}
 		if (this.keyListen(this.FullyRepairCar, this.finder) && GameScript.Get().GetIOMouseOverCarLoader2())
 		{
-			base.StartCoroutine(this.ReloadCar(GameScript.Get().GetIOMouseOverCarLoader2()));
-			UIManager.Get().ShowPopup("System:", "All shiny and new again", PopupType.Normal);
+			if (GameScript.Get().GetIOMouseOverCarLoader2() != null)
+			{
+				base.StartCoroutine(this.ReloadCar(GameScript.Get().GetIOMouseOverCarLoader2()));
+				UIManager.Get().ShowPopup("System:", "All shiny and new again", PopupType.Normal);
+			}
 			this.finder = null;
 			return;
 		}
@@ -298,9 +303,10 @@ public class TestScript : MonoBehaviour
 			base.StartCoroutine(UIManager.Get().PrepareInventory());
 			UIManager.Get().Show("Inventory");
 		}
+		this.finder = null;
 	}
 
-	// Token: 0x06002A96 RID: 10902 RVA: 0x000FB198 File Offset: 0x000F9398
+	// Token: 0x06002A8C RID: 10892 RVA: 0x000FA480 File Offset: 0x000F8680
 	public void getFromIni()
 	{
 		string path = Application.dataPath + "/Managed/swiss.ini";
@@ -355,13 +361,17 @@ public class TestScript : MonoBehaviour
 				{
 					this.licensePlate = s;
 				}
+				if (a == "spawnLocation")
+				{
+					this.spawnLocation = s;
+				}
 			}
 			return;
 		}
 		UIManager.Get().ShowPopup("System:", "swiss.ini not found in /Managed folder", PopupType.Normal);
 	}
 
-	// Token: 0x06002A97 RID: 10903 RVA: 0x0001B2D5 File Offset: 0x000194D5
+	// Token: 0x06002A8D RID: 10893 RVA: 0x0001B295 File Offset: 0x00019495
 	public IEnumerator ReloadCar(CarLoader reloadCar)
 	{
 		string name = reloadCar.GetRoot().name;
@@ -378,7 +388,7 @@ public class TestScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06002A98 RID: 10904 RVA: 0x0001B2EB File Offset: 0x000194EB
+	// Token: 0x06002A8E RID: 10894 RVA: 0x0001B2AB File Offset: 0x000194AB
 	public IEnumerator SpawnCar()
 	{
 		this.getFromIni();
@@ -402,17 +412,35 @@ public class TestScript : MonoBehaviour
 				this.version = configCounts - 1;
 			}
 			UIManager.Get().ShowPopup("System:", "Spawning Car " + this.car, PopupType.Normal);
-			if (CarLoaderPlaces.Get().GetOccupied(CarPlace.Entrance1))
+			if (this.spawnLocation == "garage1")
 			{
-				UIManager.Get().ShowPopup("System:", "Car exists, deleting", PopupType.Normal);
-				this.carLoader = CarLoaderPlaces.Get().GetCarLoaderForPlace(CarPlace.Entrance1);
-				this.carLoader.DeleteCar(true);
+				if (CarLoaderPlaces.Get().GetOccupied(CarPlace.Entrance1))
+				{
+					UIManager.Get().ShowPopup("System:", "Car exists Garage 1, deleting", PopupType.Normal);
+					this.carLoader = CarLoaderPlaces.Get().GetCarLoaderForPlace(CarPlace.Entrance1);
+					this.carLoader.DeleteCar(true);
+				}
+				else
+				{
+					UIManager.Get().ShowPopup("System:", "Garage 1 Empty Spot", PopupType.Normal);
+					this.carLoader = CarLoaderPlaces.Get().GetPlaceForLoadCar();
+					this.carLoader.groundPosition = CarLoaderPlaces.Get().GetPlaceTransform(CarPlace.Entrance1);
+				}
 			}
-			else
+			if (this.spawnLocation == "paintshop")
 			{
-				UIManager.Get().ShowPopup("System:", "Empty Spot", PopupType.Normal);
-				this.carLoader = CarLoaderPlaces.Get().GetPlaceForLoadCar();
-				this.carLoader.groundPosition = CarLoaderPlaces.Get().GetPlaceTransform(CarPlace.Entrance1);
+				if (CarLoaderPlaces.Get().GetOccupied(CarPlace.Paintshop))
+				{
+					UIManager.Get().ShowPopup("System:", "Car exists Paintshop, deleting", PopupType.Normal);
+					this.carLoader = CarLoaderPlaces.Get().GetCarLoaderForPlace(CarPlace.Paintshop);
+					this.carLoader.DeleteCar(true);
+				}
+				else
+				{
+					UIManager.Get().ShowPopup("System:", "Paintshop Empty Spot", PopupType.Normal);
+					this.carLoader = CarLoaderPlaces.Get().GetPlaceForLoadCar();
+					this.carLoader.groundPosition = CarLoaderPlaces.Get().GetPlaceTransform(CarPlace.Paintshop);
+				}
 			}
 			this.carLoader.ConfigVersion = this.version;
 			base.StartCoroutine(this.carLoader.LoadCarFromFile(this.car));
@@ -442,7 +470,7 @@ public class TestScript : MonoBehaviour
 		yield break;
 	}
 
-	// Token: 0x06002A99 RID: 10905 RVA: 0x000FB318 File Offset: 0x000F9518
+	// Token: 0x06002A8F RID: 10895 RVA: 0x000FA614 File Offset: 0x000F8814
 	private void getFromKeysIni()
 	{
 		this.keyValuePairs = new Dictionary<string, string>();
@@ -590,14 +618,14 @@ public class TestScript : MonoBehaviour
 		UIManager.Get().ShowPopup("System:", "swiss.ini not found in /Managed folder", PopupType.Normal);
 	}
 
-	// Token: 0x06002A9A RID: 10906 RVA: 0x0001B2FA File Offset: 0x000194FA
+	// Token: 0x06002A90 RID: 10896 RVA: 0x0001B2BA File Offset: 0x000194BA
 	public void AssignKey(string key, string value)
 	{
 		this.keyValuePairs = new Dictionary<string, string>();
 		this.keyValuePairs.Add(new KeyValuePair<string, string>(key, value));
 	}
 
-	// Token: 0x06002A9B RID: 10907 RVA: 0x000FB788 File Offset: 0x000F9988
+	// Token: 0x06002A91 RID: 10897 RVA: 0x000FAA84 File Offset: 0x000F8C84
 	public virtual void KeyPress()
 	{
 		this.getFromKeysIni();
@@ -715,153 +743,156 @@ public class TestScript : MonoBehaviour
 		}
 	}
 
-	// Token: 0x06002A9C RID: 10908 RVA: 0x0001B319 File Offset: 0x00019519
+	// Token: 0x06002A92 RID: 10898 RVA: 0x0001B2D9 File Offset: 0x000194D9
 	public bool keyListen(string key, string value)
 	{
 		return this.keyValuePairs.Contains(new KeyValuePair<string, string>(key, value));
 	}
 
-	// Token: 0x06002A9D RID: 10909 RVA: 0x0001B32D File Offset: 0x0001952D
+	// Token: 0x06002A93 RID: 10899 RVA: 0x0001B2ED File Offset: 0x000194ED
 	public static TestScript Get()
 	{
 		return TestScript.m_instance;
 	}
 
-	// Token: 0x0400236E RID: 9070
+	// Token: 0x04002362 RID: 9058
 	public CarLoader carLoader;
 
-	// Token: 0x0400236F RID: 9071
+	// Token: 0x04002363 RID: 9059
 	public int version;
 
-	// Token: 0x04002370 RID: 9072
+	// Token: 0x04002364 RID: 9060
 	public int mileage;
 
-	// Token: 0x04002371 RID: 9073
+	// Token: 0x04002365 RID: 9061
 	public int quality;
 
-	// Token: 0x04002372 RID: 9074
+	// Token: 0x04002366 RID: 9062
 	public string car;
 
-	// Token: 0x04002373 RID: 9075
+	// Token: 0x04002367 RID: 9063
 	public float condition;
 
-	// Token: 0x04002374 RID: 9076
+	// Token: 0x04002368 RID: 9064
 	public CarLoader carReLoader;
 
-	// Token: 0x04002375 RID: 9077
+	// Token: 0x04002369 RID: 9065
 	public NewGroupItem engine;
 
-	// Token: 0x04002376 RID: 9078
+	// Token: 0x0400236A RID: 9066
 	public CarLoader cEngine;
 
-	// Token: 0x04002377 RID: 9079
+	// Token: 0x0400236B RID: 9067
 	public string SpawnCarKey;
 
-	// Token: 0x04002378 RID: 9080
+	// Token: 0x0400236C RID: 9068
 	public string IncreseConfigKey;
 
-	// Token: 0x04002379 RID: 9081
+	// Token: 0x0400236D RID: 9069
 	public string DecreaseConfigKey;
 
-	// Token: 0x0400237A RID: 9082
+	// Token: 0x0400236E RID: 9070
 	public string RandomChangeCondition;
 
-	// Token: 0x0400237B RID: 9083
+	// Token: 0x0400236F RID: 9071
 	public string ReloadLiveries;
 
-	// Token: 0x0400237C RID: 9084
+	// Token: 0x04002370 RID: 9072
 	public string SetMileage;
 
-	// Token: 0x0400237D RID: 9085
+	// Token: 0x04002371 RID: 9073
 	public string DuplicateEngine;
 
-	// Token: 0x0400237E RID: 9086
+	// Token: 0x04002372 RID: 9074
 	public string IncreaseSpeed;
 
-	// Token: 0x0400237F RID: 9087
+	// Token: 0x04002373 RID: 9075
 	public string DecreaseSpeed;
 
-	// Token: 0x04002380 RID: 9088
+	// Token: 0x04002374 RID: 9076
 	public string AddAllEngineParts;
 
-	// Token: 0x04002381 RID: 9089
+	// Token: 0x04002375 RID: 9077
 	public string RepairAllItems;
 
-	// Token: 0x04002382 RID: 9090
+	// Token: 0x04002376 RID: 9078
 	public string AddBarn;
 
-	// Token: 0x04002383 RID: 9091
+	// Token: 0x04002377 RID: 9079
 	public string AddMoney;
 
-	// Token: 0x04002384 RID: 9092
+	// Token: 0x04002378 RID: 9080
 	public string AddXP;
 
-	// Token: 0x04002385 RID: 9093
+	// Token: 0x04002379 RID: 9081
 	public string UnlockAllUpgrades;
 
-	// Token: 0x04002386 RID: 9094
+	// Token: 0x0400237A RID: 9082
 	public string OpenShop;
 
-	// Token: 0x04002387 RID: 9095
+	// Token: 0x0400237B RID: 9083
 	public string AddThisPart;
 
-	// Token: 0x04002388 RID: 9096
+	// Token: 0x0400237C RID: 9084
 	public string RotateEngineRight;
 
-	// Token: 0x04002389 RID: 9097
+	// Token: 0x0400237D RID: 9085
 	public string RotateEngineLeft;
 
-	// Token: 0x0400238A RID: 9098
+	// Token: 0x0400237E RID: 9086
 	public string finder;
 
-	// Token: 0x0400238B RID: 9099
+	// Token: 0x0400237F RID: 9087
 	private IDictionary<string, string> keyValuePairs;
 
-	// Token: 0x0400238C RID: 9100
+	// Token: 0x04002380 RID: 9088
 	public string RandomChangeColor;
 
-	// Token: 0x0400238D RID: 9101
+	// Token: 0x04002381 RID: 9089
 	public string GenerateJunkyard;
 
-	// Token: 0x0400238E RID: 9102
+	// Token: 0x04002382 RID: 9090
 	public string FullyRepairCar;
 
-	// Token: 0x0400238F RID: 9103
+	// Token: 0x04002383 RID: 9091
 	public string PhotoMode;
 
-	// Token: 0x04002390 RID: 9104
+	// Token: 0x04002384 RID: 9092
 	public int addMoneyAmount;
 
-	// Token: 0x04002391 RID: 9105
+	// Token: 0x04002385 RID: 9093
 	public int addXPAmount;
 
-	// Token: 0x04002392 RID: 9106
+	// Token: 0x04002386 RID: 9094
 	public string itemID;
 
-	// Token: 0x04002393 RID: 9107
+	// Token: 0x04002387 RID: 9095
 	public string showInventory;
 
-	// Token: 0x04002394 RID: 9108
+	// Token: 0x04002388 RID: 9096
 	public string SetMoney;
 
-	// Token: 0x04002395 RID: 9109
+	// Token: 0x04002389 RID: 9097
 	public int setMoneyAmount;
 
-	// Token: 0x04002396 RID: 9110
+	// Token: 0x0400238A RID: 9098
 	public string PartIsExamined;
 
-	// Token: 0x04002397 RID: 9111
+	// Token: 0x0400238B RID: 9099
 	public string CarIsExamined;
 
-	// Token: 0x04002398 RID: 9112
+	// Token: 0x0400238C RID: 9100
 	public string showIntro;
 
-	// Token: 0x04002399 RID: 9113
+	// Token: 0x0400238D RID: 9101
 	private static TestScript m_instance;
 
-	// Token: 0x0400239A RID: 9114
+	// Token: 0x0400238E RID: 9102
 	public string spawnIsExamined;
 
-	// Token: 0x0400239B RID: 9115
+	// Token: 0x0400238F RID: 9103
 	public string licensePlate;
+
+	// Token: 0x04002390 RID: 9104
+	public string spawnLocation;
 }
