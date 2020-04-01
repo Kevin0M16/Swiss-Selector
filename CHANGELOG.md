@@ -1,5 +1,8 @@
 # Swiss-Selector CHANGELOG
 
+## V1.6 for CMS 1.6.5 (MAR 31 2019)
+- Update dll file to 1.6.5
+
 ## V1.6 for CMS 1.6.4 (JAN 24 2019)
 - Update dll file to 1.6.4
 
