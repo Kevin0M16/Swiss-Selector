@@ -7,9 +7,9 @@ CMS 2018 Mod
 
 Swiss Selector is a tool for Car Mechanic Simulator 2018. It uses a modded version of the original dll file.
 
-## Download - Update V1.6 for CMS 1.6.5 (MAR 31 2020)
-
-Update dll file for 1.6.5
+## Update V1.7 for CMS 1.7.0 (JAN 29 2023)
+- Update dll to 1.7.0
+- Added FixThisPart. To use press * to set selected part to set quality and condition
 
 <pre>  <a href="https://github.com/Kevin0M16/Swiss-Selector/releases/latest/download/Swiss-Selector.zip"><img src="https://img.shields.io/badge/dynamic/json.svg?label=download&url=https://api.github.com/repos/Kevin0M16/Swiss-Selector/releases/latest&query=$.assets[1].name&style=for-the-badge" alt="download"/></a></pre>
 
