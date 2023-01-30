@@ -1,5 +1,9 @@
 # Swiss-Selector CHANGELOG
 
+## V1.7 for CMS 1.7.0 (JAN 29 2023)
+- Update dll to 1.7.0
+- Added FixThisPart. To use press * to set selected part to set quality and condition
+  
 ## V1.6 for CMS 1.6.5 (MAR 31 2019)
 - Update dll file to 1.6.5
 

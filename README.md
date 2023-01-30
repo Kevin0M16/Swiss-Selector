@@ -57,7 +57,7 @@ Here is an overview of what you need to get started with Swiss Selector-->
 #### Requirements
 
 The current version of Swiss Selector requires Car Mechanic Simulator 2018 version 1.6.4 and the modded dll file included in the .zip
- - [x] Car Mechanic Simulator 2018 version 1.6.4
+ - [x] Car Mechanic Simulator 2018 version 1.7.0
  - [x] modded dll required - download .zip
 
 :exclamation: **Always back up all your game data and saves before any mods**<br />
@@ -113,10 +113,11 @@ The current version of Swiss Selector requires Car Mechanic Simulator 2018 versi
 * PageDown - Part under mouse is Examined
 * Delete - Delete car at Garage Entrance 1
 * Shift + Delete - Delete all barns after save reload
-
+* \* Fix selected part to set condition and quality
+* 
 ## Built With
 
-* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) - For the Windows 10 UI
+* [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) - For the Windows 10 UI
 * [dnSpy](https://github.com/0xd4d/dnSpy) - To edit the dll file
 
 ## Authors

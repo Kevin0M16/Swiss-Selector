@@ -1,25 +1,62 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Reflection;
-using System.Resources;
 
 
 namespace Swiss_Selector //version 1.5
 {
     public partial class Form1 : Form
     {
+        //private string newSelected;
+        //private string imageLocation;
+        //private string newestKey;
+        public int checker;
+        //public List<string> mods;
+        private string currentKey;
+        private string savePath;
+        public string startPref;
+        public string startPrefPath;
+        private string ChosenPath;
+        public string dllPath;
+        //public string iniFiles;
+        public string keysPath;
+        public string swissPath;
+        public string carsPath;
+        //public string ModCarsPath;
+        //public string ModFunction;        
+        public string IncreaseConfig;
+        public string DecreaseConfig;
+        public string RandomChangeCondition;
+        public string RandomChangeColor;
+        public string ReloadLiveries;
+        public string SetMileage;
+        public string GenerateJunkyard;
+        public string FullyRepairCar;
+        public string PhotoMode;
+        public string DuplicateEngine;
+        public string IncreaseSpeed;
+        public string DecreaseSpeed;
+        public string AddAllEngineParts;
+        public string RepairAllItems;
+        public string AddBarn;
+        public string AddMoney;
+        public string AddXP;
+        public string UnlockAllUpgrades;
+        public string OpenShop;
+        public string FixThisPart;
+        public string AddThisPart;
+        public string RotateEngineRight;
+        public string RotateEngineLeft;
+
         public Form1()
         {
             InitializeComponent();            
         }
         private void Form1_Shown(object sender, EventArgs e)
-        {            
+        {
             StartUp();
             if (checker == 0)
             {
@@ -28,11 +65,11 @@ namespace Swiss_Selector //version 1.5
             else
             {
                 AppendLine(textBox1, "Swiss Selector loaded but with ERRORS! read log! Code: " + checker);
-            }            
+            }
         }
         private void StartUp()
         {
-            dllPath = System.IO.Path.GetDirectoryName(Application.ExecutablePath);
+            dllPath = Path.GetDirectoryName(Application.ExecutablePath);
             if (File.Exists(dllPath + @"..\..\Managed\Assembly-CSharp-firstpass.dll"))
             {
                 listBox1.Items.Clear();
@@ -56,7 +93,7 @@ namespace Swiss_Selector //version 1.5
                 checker = 1;
                 AppendLine(textBox1, "Swiss Selector not in \\Managed folder...");
                 UnLockKeys(false);
-            }           
+            }
         }
         public void BuildiniFile(string ini)
         {
@@ -75,8 +112,8 @@ namespace Swiss_Selector //version 1.5
                         tw.WriteLine("mileage=4000");
                         tw.WriteLine("condition=1");
                         tw.WriteLine("addMoneyAmount=10000");
-                        tw.WriteLine("setMoneyAmount=1100000");
-                        tw.WriteLine("addXPAmount=2500");
+                        tw.WriteLine("setMoneyAmount=1000000");
+                        tw.WriteLine("addXPAmount=500");
                         tw.WriteLine("showInventory=true");
                         tw.WriteLine("showIntro=true");
                         tw.WriteLine("spawnIsExamined=true");
@@ -115,8 +152,8 @@ namespace Swiss_Selector //version 1.5
                         tw.WriteLine("mileage=4000");
                         tw.WriteLine("condition=1");
                         tw.WriteLine("addMoneyAmount=10000");
-                        tw.WriteLine("setMoneyAmount=1100000");
-                        tw.WriteLine("addXPAmount=2500");
+                        tw.WriteLine("setMoneyAmount=1000000");
+                        tw.WriteLine("addXPAmount=500");
                         tw.WriteLine("showInventory=true");
                         tw.WriteLine("showIntro=true");
                         tw.WriteLine("spawnIsExamined=true");
@@ -143,7 +180,7 @@ namespace Swiss_Selector //version 1.5
             }
             if (ini == swissPath && !File.Exists(path + @"..\..\Managed\Assembly-CSharp-firstpass.dll"))
             {
-                AppendLine(textBox1, "Swiss Selector not in \\Managed folder...");               
+                AppendLine(textBox1, "Swiss Selector not in \\Managed folder...");
             }
             if (ini == keysPath)
             {
@@ -176,6 +213,7 @@ namespace Swiss_Selector //version 1.5
                         tw.WriteLine("AddXP=F10");
                         tw.WriteLine("UnlockAllUpgrades=F11");
                         tw.WriteLine("OpenShop=End");
+                        tw.WriteLine("FixThisPart=*");
                         tw.WriteLine("AddThisPart=Insert");
                         tw.WriteLine("RotateEngineRight=]");
                         tw.WriteLine("RotateEngineLeft=[");
@@ -233,6 +271,7 @@ namespace Swiss_Selector //version 1.5
                         tw.WriteLine("AddXP=F10");
                         tw.WriteLine("UnlockAllUpgrades=F11");
                         tw.WriteLine("OpenShop=End");
+                        tw.WriteLine("FixThisPart=*");
                         tw.WriteLine("AddThisPart=Insert");
                         tw.WriteLine("RotateEngineRight=]");
                         tw.WriteLine("RotateEngineLeft=[");
@@ -324,7 +363,6 @@ namespace Swiss_Selector //version 1.5
                 {
                     AppendLine(textBox1, "dll path found, creating keys.ini");
                     BuildiniFile(keysPath);
-
                 }
             }
             if (file == "swissPath")
@@ -637,6 +675,7 @@ namespace Swiss_Selector //version 1.5
             comboBox24.Enabled = locker;
             comboBox25.Enabled = locker;
             comboBox26.Enabled = locker;
+            comboBox27.Enabled = locker;
         }
         private void SetKeys()
         {
@@ -663,6 +702,7 @@ namespace Swiss_Selector //version 1.5
                 ReadKeys("AddXP", comboBox18);
                 ReadKeys("UnlockAllUpgrades", comboBox19);
                 ReadKeys("OpenShop", comboBox20);
+                ReadKeys("FixThisPart", comboBox27);
                 ReadKeys("AddThisPart", comboBox21);
                 ReadKeys("RotateEngineRight", comboBox22);
                 ReadKeys("RotateEngineLeft", comboBox23);
@@ -751,6 +791,7 @@ namespace Swiss_Selector //version 1.5
                 Update("AddXP", comboBox18);
                 Update("UnlockAllUpgrades", comboBox19);
                 Update("OpenShop", comboBox20);
+                Update("FixThisPart", comboBox27);
                 Update("AddThisPart", comboBox21);
                 Update("RotateEngineRight", comboBox22);
                 Update("RotateEngineLeft", comboBox23);
@@ -1378,7 +1419,7 @@ namespace Swiss_Selector //version 1.5
                 openInvToolStripMenuItem.Checked = false;
             }
         }
-        private void ManuallySetCarFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        private void manuallySetCarFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CarsPath("*.cms");
             if (!Directory.Exists(ChosenPath))
@@ -1444,7 +1485,7 @@ namespace Swiss_Selector //version 1.5
                     {
                         pictureBox1.Image = null;
                         return;
-                    }   
+                    }
                 }
                 catch
                 {
@@ -1494,7 +1535,6 @@ namespace Swiss_Selector //version 1.5
             {
                 File.Delete(Application.CommonAppDataPath + "\\save.txt");
                 AppendLine(textBox1, "Save.txt deleted.");
-
                 if (!File.Exists(Application.CommonAppDataPath + "\\save.txt"))
                 {
                     await Task.Delay(3000);
@@ -1532,12 +1572,12 @@ namespace Swiss_Selector //version 1.5
             }
         }
         private void MiniModeToolStripMenuItem_Click(object sender, EventArgs e)
-        {            
+        {
             Form2 f2 = new Form2();
             Writeini("startPref", "minimode", startPrefPath);
             f2.MyProperty = startPrefPath;
             f2.Show();
-            this.Hide();                        
+            this.Hide();
         }
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {

@@ -97,6 +97,7 @@ namespace Swiss_Selector
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.selectiniLocationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manuallySetCarFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeAllCreatedFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miniModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.preferencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,8 +115,6 @@ namespace Swiss_Selector
             this.paintShopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.garageEntrance1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.advancedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manuallySetCarFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buildIniFilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buildKeysiniFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -138,11 +137,13 @@ namespace Swiss_Selector
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label31 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.comboBox27 = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label34 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
@@ -155,11 +156,11 @@ namespace Swiss_Selector
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
@@ -176,7 +177,7 @@ namespace Swiss_Selector
             // 
             this.listBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(7, 51);
+            this.listBox2.Location = new System.Drawing.Point(5, 65);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(128, 225);
             this.listBox2.TabIndex = 1;
@@ -341,7 +342,7 @@ namespace Swiss_Selector
             // 
             this.listBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox5.FormattingEnabled = true;
-            this.listBox5.Location = new System.Drawing.Point(216, 44);
+            this.listBox5.Location = new System.Drawing.Point(170, 19);
             this.listBox5.Name = "listBox5";
             this.listBox5.Size = new System.Drawing.Size(106, 355);
             this.listBox5.TabIndex = 4;
@@ -350,7 +351,7 @@ namespace Swiss_Selector
             // 
             this.listBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(54, 44);
+            this.listBox4.Location = new System.Drawing.Point(6, 19);
             this.listBox4.Name = "listBox4";
             this.listBox4.Size = new System.Drawing.Size(158, 355);
             this.listBox4.TabIndex = 3;
@@ -359,7 +360,7 @@ namespace Swiss_Selector
             // 
             this.listBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(141, 51);
+            this.listBox3.Location = new System.Drawing.Point(139, 65);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(232, 225);
             this.listBox3.TabIndex = 2;
@@ -370,7 +371,7 @@ namespace Swiss_Selector
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(112, 399);
+            this.label9.Location = new System.Drawing.Point(112, 361);
             this.label9.Margin = new System.Windows.Forms.Padding(3);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 13);
@@ -384,7 +385,7 @@ namespace Swiss_Selector
             this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label22.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(354, 134);
+            this.label22.Location = new System.Drawing.Point(348, 103);
             this.label22.Margin = new System.Windows.Forms.Padding(3);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(80, 13);
@@ -424,7 +425,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox6.Location = new System.Drawing.Point(31, 199);
+            this.comboBox6.Location = new System.Drawing.Point(31, 154);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(75, 21);
             this.comboBox6.TabIndex = 15;
@@ -432,7 +433,7 @@ namespace Swiss_Selector
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(163, 469);
+            this.button1.Location = new System.Drawing.Point(156, 420);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(121, 26);
             this.button1.TabIndex = 34;
@@ -446,7 +447,7 @@ namespace Swiss_Selector
             this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(354, 398);
+            this.label15.Location = new System.Drawing.Point(345, 358);
             this.label15.Margin = new System.Windows.Forms.Padding(3);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(103, 13);
@@ -460,7 +461,7 @@ namespace Swiss_Selector
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(112, 36);
+            this.label1.Location = new System.Drawing.Point(112, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 13);
@@ -500,7 +501,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox15.Location = new System.Drawing.Point(271, 131);
+            this.comboBox15.Location = new System.Drawing.Point(267, 100);
             this.comboBox15.Name = "comboBox15";
             this.comboBox15.Size = new System.Drawing.Size(75, 21);
             this.comboBox15.TabIndex = 25;
@@ -511,7 +512,7 @@ namespace Swiss_Selector
             this.label24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label24.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(354, 68);
+            this.label24.Location = new System.Drawing.Point(348, 49);
             this.label24.Margin = new System.Windows.Forms.Padding(3);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(87, 13);
@@ -525,7 +526,7 @@ namespace Swiss_Selector
             this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label18.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(352, 300);
+            this.label18.Location = new System.Drawing.Point(348, 238);
             this.label18.Margin = new System.Windows.Forms.Padding(3);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(104, 13);
@@ -539,7 +540,7 @@ namespace Swiss_Selector
             this.label23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label23.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(354, 101);
+            this.label23.Location = new System.Drawing.Point(348, 76);
             this.label23.Margin = new System.Windows.Forms.Padding(3);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(103, 13);
@@ -553,7 +554,7 @@ namespace Swiss_Selector
             this.label17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label17.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(354, 333);
+            this.label17.Location = new System.Drawing.Point(348, 265);
             this.label17.Margin = new System.Windows.Forms.Padding(3);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(61, 13);
@@ -593,7 +594,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox16.Location = new System.Drawing.Point(271, 164);
+            this.comboBox16.Location = new System.Drawing.Point(267, 127);
             this.comboBox16.Name = "comboBox16";
             this.comboBox16.Size = new System.Drawing.Size(75, 21);
             this.comboBox16.TabIndex = 26;
@@ -630,7 +631,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox22.Location = new System.Drawing.Point(271, 395);
+            this.comboBox22.Location = new System.Drawing.Point(264, 355);
             this.comboBox22.Name = "comboBox22";
             this.comboBox22.Size = new System.Drawing.Size(75, 21);
             this.comboBox22.TabIndex = 33;
@@ -667,7 +668,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox14.Location = new System.Drawing.Point(271, 98);
+            this.comboBox14.Location = new System.Drawing.Point(267, 73);
             this.comboBox14.Name = "comboBox14";
             this.comboBox14.Size = new System.Drawing.Size(75, 21);
             this.comboBox14.TabIndex = 24;
@@ -678,7 +679,7 @@ namespace Swiss_Selector
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(112, 235);
+            this.label7.Location = new System.Drawing.Point(112, 184);
             this.label7.Margin = new System.Windows.Forms.Padding(3);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 13);
@@ -718,7 +719,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox5.Location = new System.Drawing.Point(31, 165);
+            this.comboBox5.Location = new System.Drawing.Point(31, 127);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(75, 21);
             this.comboBox5.TabIndex = 14;
@@ -729,7 +730,7 @@ namespace Swiss_Selector
             this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label16.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(354, 366);
+            this.label16.Location = new System.Drawing.Point(345, 331);
             this.label16.Margin = new System.Windows.Forms.Padding(3);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(71, 13);
@@ -769,7 +770,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox4.Location = new System.Drawing.Point(31, 132);
+            this.comboBox4.Location = new System.Drawing.Point(31, 100);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(75, 21);
             this.comboBox4.TabIndex = 13;
@@ -780,7 +781,7 @@ namespace Swiss_Selector
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(112, 202);
+            this.label6.Location = new System.Drawing.Point(112, 157);
             this.label6.Margin = new System.Windows.Forms.Padding(3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 13);
@@ -794,7 +795,7 @@ namespace Swiss_Selector
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(112, 69);
+            this.label2.Location = new System.Drawing.Point(112, 49);
             this.label2.Margin = new System.Windows.Forms.Padding(3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
@@ -834,7 +835,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox8.Location = new System.Drawing.Point(31, 264);
+            this.comboBox8.Location = new System.Drawing.Point(31, 208);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(75, 21);
             this.comboBox8.TabIndex = 17;
@@ -845,7 +846,7 @@ namespace Swiss_Selector
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(354, 35);
+            this.label10.Location = new System.Drawing.Point(348, 22);
             this.label10.Margin = new System.Windows.Forms.Padding(3);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 13);
@@ -884,7 +885,7 @@ namespace Swiss_Selector
             "[",
             "PageUp",
             "PageDown"});
-            this.comboBox23.Location = new System.Drawing.Point(31, 396);
+            this.comboBox23.Location = new System.Drawing.Point(31, 358);
             this.comboBox23.Name = "comboBox23";
             this.comboBox23.Size = new System.Drawing.Size(75, 21);
             this.comboBox23.TabIndex = 21;
@@ -920,7 +921,7 @@ namespace Swiss_Selector
             "[",
             "PageUp",
             "PageDown"});
-            this.comboBox17.Location = new System.Drawing.Point(271, 198);
+            this.comboBox17.Location = new System.Drawing.Point(267, 154);
             this.comboBox17.Name = "comboBox17";
             this.comboBox17.Size = new System.Drawing.Size(75, 21);
             this.comboBox17.TabIndex = 27;
@@ -957,7 +958,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox21.Location = new System.Drawing.Point(271, 363);
+            this.comboBox21.Location = new System.Drawing.Point(264, 328);
             this.comboBox21.Name = "comboBox21";
             this.comboBox21.Size = new System.Drawing.Size(75, 21);
             this.comboBox21.TabIndex = 32;
@@ -994,7 +995,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox11.Location = new System.Drawing.Point(31, 364);
+            this.comboBox11.Location = new System.Drawing.Point(31, 289);
             this.comboBox11.Name = "comboBox11";
             this.comboBox11.Size = new System.Drawing.Size(75, 21);
             this.comboBox11.TabIndex = 20;
@@ -1030,7 +1031,7 @@ namespace Swiss_Selector
             "[",
             "PageUp",
             "PageDown"});
-            this.comboBox2.Location = new System.Drawing.Point(31, 66);
+            this.comboBox2.Location = new System.Drawing.Point(31, 46);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(75, 21);
             this.comboBox2.TabIndex = 11;
@@ -1067,7 +1068,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox1.Location = new System.Drawing.Point(31, 33);
+            this.comboBox1.Location = new System.Drawing.Point(31, 19);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(75, 21);
             this.comboBox1.TabIndex = 12;
@@ -1078,7 +1079,7 @@ namespace Swiss_Selector
             this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label14.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(112, 267);
+            this.label14.Location = new System.Drawing.Point(112, 211);
             this.label14.Margin = new System.Windows.Forms.Padding(3);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(97, 13);
@@ -1092,7 +1093,7 @@ namespace Swiss_Selector
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(114, 367);
+            this.label11.Location = new System.Drawing.Point(112, 292);
             this.label11.Margin = new System.Windows.Forms.Padding(3);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(88, 13);
@@ -1106,7 +1107,7 @@ namespace Swiss_Selector
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(112, 168);
+            this.label5.Location = new System.Drawing.Point(112, 130);
             this.label5.Margin = new System.Windows.Forms.Padding(3);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 13);
@@ -1120,7 +1121,7 @@ namespace Swiss_Selector
             this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label21.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(354, 167);
+            this.label21.Location = new System.Drawing.Point(348, 130);
             this.label21.Margin = new System.Windows.Forms.Padding(3);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(51, 13);
@@ -1160,7 +1161,7 @@ namespace Swiss_Selector
             "[",
             "PageUp",
             "PageDown"});
-            this.comboBox13.Location = new System.Drawing.Point(271, 65);
+            this.comboBox13.Location = new System.Drawing.Point(267, 46);
             this.comboBox13.Name = "comboBox13";
             this.comboBox13.Size = new System.Drawing.Size(75, 21);
             this.comboBox13.TabIndex = 23;
@@ -1197,7 +1198,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox18.Location = new System.Drawing.Point(271, 263);
+            this.comboBox18.Location = new System.Drawing.Point(267, 208);
             this.comboBox18.Name = "comboBox18";
             this.comboBox18.Size = new System.Drawing.Size(75, 21);
             this.comboBox18.TabIndex = 29;
@@ -1234,7 +1235,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox20.Location = new System.Drawing.Point(271, 330);
+            this.comboBox20.Location = new System.Drawing.Point(267, 262);
             this.comboBox20.Name = "comboBox20";
             this.comboBox20.Size = new System.Drawing.Size(75, 21);
             this.comboBox20.TabIndex = 31;
@@ -1271,7 +1272,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox7.Location = new System.Drawing.Point(31, 232);
+            this.comboBox7.Location = new System.Drawing.Point(31, 181);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(75, 21);
             this.comboBox7.TabIndex = 16;
@@ -1307,7 +1308,7 @@ namespace Swiss_Selector
             "[",
             "PageUp",
             "PageDown"});
-            this.comboBox3.Location = new System.Drawing.Point(31, 99);
+            this.comboBox3.Location = new System.Drawing.Point(31, 73);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(75, 21);
             this.comboBox3.TabIndex = 12;
@@ -1344,7 +1345,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox10.Location = new System.Drawing.Point(31, 331);
+            this.comboBox10.Location = new System.Drawing.Point(31, 262);
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.Size = new System.Drawing.Size(75, 21);
             this.comboBox10.TabIndex = 19;
@@ -1355,7 +1356,7 @@ namespace Swiss_Selector
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label13.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(112, 301);
+            this.label13.Location = new System.Drawing.Point(112, 238);
             this.label13.Margin = new System.Windows.Forms.Padding(3);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(81, 13);
@@ -1369,7 +1370,7 @@ namespace Swiss_Selector
             this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label20.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(354, 201);
+            this.label20.Location = new System.Drawing.Point(348, 157);
             this.label20.Margin = new System.Windows.Forms.Padding(3);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(61, 13);
@@ -1383,7 +1384,7 @@ namespace Swiss_Selector
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(112, 135);
+            this.label4.Location = new System.Drawing.Point(112, 103);
             this.label4.Margin = new System.Windows.Forms.Padding(3);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(134, 13);
@@ -1397,7 +1398,7 @@ namespace Swiss_Selector
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(112, 102);
+            this.label3.Location = new System.Drawing.Point(112, 76);
             this.label3.Margin = new System.Windows.Forms.Padding(3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 13);
@@ -1411,7 +1412,7 @@ namespace Swiss_Selector
             this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label19.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(352, 266);
+            this.label19.Location = new System.Drawing.Point(348, 211);
             this.label19.Margin = new System.Windows.Forms.Padding(3);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(43, 13);
@@ -1425,7 +1426,7 @@ namespace Swiss_Selector
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label12.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(112, 334);
+            this.label12.Location = new System.Drawing.Point(112, 265);
             this.label12.Margin = new System.Windows.Forms.Padding(3);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 13);
@@ -1466,7 +1467,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox12.Location = new System.Drawing.Point(271, 32);
+            this.comboBox12.Location = new System.Drawing.Point(267, 19);
             this.comboBox12.Name = "comboBox12";
             this.comboBox12.Size = new System.Drawing.Size(75, 21);
             this.comboBox12.TabIndex = 22;
@@ -1503,7 +1504,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox9.Location = new System.Drawing.Point(31, 298);
+            this.comboBox9.Location = new System.Drawing.Point(31, 235);
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(75, 21);
             this.comboBox9.TabIndex = 18;
@@ -1540,7 +1541,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox19.Location = new System.Drawing.Point(271, 297);
+            this.comboBox19.Location = new System.Drawing.Point(267, 235);
             this.comboBox19.Name = "comboBox19";
             this.comboBox19.Size = new System.Drawing.Size(75, 21);
             this.comboBox19.TabIndex = 30;
@@ -1555,7 +1556,7 @@ namespace Swiss_Selector
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(790, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(783, 24);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -1564,6 +1565,7 @@ namespace Swiss_Selector
             this.toolStripMenuItem1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.selectiniLocationToolStripMenuItem,
+            this.manuallySetCarFolderToolStripMenuItem,
             this.removeAllCreatedFilesToolStripMenuItem,
             this.miniModeToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
@@ -1576,6 +1578,13 @@ namespace Swiss_Selector
             this.selectiniLocationToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
             this.selectiniLocationToolStripMenuItem.Text = "Select \\Managed folder location...";
             this.selectiniLocationToolStripMenuItem.Click += new System.EventHandler(this.SelectiniLocationToolStripMenuItem_Click);
+            // 
+            // manuallySetCarFolderToolStripMenuItem
+            // 
+            this.manuallySetCarFolderToolStripMenuItem.Name = "manuallySetCarFolderToolStripMenuItem";
+            this.manuallySetCarFolderToolStripMenuItem.Size = new System.Drawing.Size(235, 22);
+            this.manuallySetCarFolderToolStripMenuItem.Text = "Select Cars folder location...";
+            this.manuallySetCarFolderToolStripMenuItem.Click += new System.EventHandler(this.manuallySetCarFolderToolStripMenuItem_Click);
             // 
             // removeAllCreatedFilesToolStripMenuItem
             // 
@@ -1607,7 +1616,7 @@ namespace Swiss_Selector
             this.openInvToolStripMenuItem,
             this.dontOpenInvToolStripMenuItem});
             this.keyMapToolStripMenuItem.Name = "keyMapToolStripMenuItem";
-            this.keyMapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.keyMapToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.keyMapToolStripMenuItem.Text = "Insert Part Options";
             // 
             // openInvToolStripMenuItem
@@ -1630,7 +1639,7 @@ namespace Swiss_Selector
             this.showIntroToolStripMenuItem,
             this.dontShowIntroToolStripMenuItem});
             this.showIntroOptionsToolStripMenuItem.Name = "showIntroOptionsToolStripMenuItem";
-            this.showIntroOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showIntroOptionsToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.showIntroOptionsToolStripMenuItem.Text = "Show Intro Options";
             // 
             // showIntroToolStripMenuItem
@@ -1653,7 +1662,7 @@ namespace Swiss_Selector
             this.spawnCarOptionsToolStripMenuItem,
             this.spawnLocationToolStripMenuItem});
             this.spawnOptionsToolStripMenuItem.Name = "spawnOptionsToolStripMenuItem";
-            this.spawnOptionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.spawnOptionsToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.spawnOptionsToolStripMenuItem.Text = "Spawn Options";
             // 
             // spawnCarOptionsToolStripMenuItem
@@ -1705,39 +1714,23 @@ namespace Swiss_Selector
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.advancedToolStripMenuItem,
             this.buildIniFilesToolStripMenuItem,
             this.buildKeysiniFileToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             // 
-            // advancedToolStripMenuItem
-            // 
-            this.advancedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manuallySetCarFolderToolStripMenuItem});
-            this.advancedToolStripMenuItem.Name = "advancedToolStripMenuItem";
-            this.advancedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.advancedToolStripMenuItem.Text = "Advanced";
-            // 
-            // manuallySetCarFolderToolStripMenuItem
-            // 
-            this.manuallySetCarFolderToolStripMenuItem.Name = "manuallySetCarFolderToolStripMenuItem";
-            this.manuallySetCarFolderToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.manuallySetCarFolderToolStripMenuItem.Text = "Manually Select Car Folder...";
-            this.manuallySetCarFolderToolStripMenuItem.Click += new System.EventHandler(this.ManuallySetCarFolderToolStripMenuItem_Click);
-            // 
             // buildIniFilesToolStripMenuItem
             // 
             this.buildIniFilesToolStripMenuItem.Name = "buildIniFilesToolStripMenuItem";
-            this.buildIniFilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.buildIniFilesToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.buildIniFilesToolStripMenuItem.Text = "Build swiss.ini File";
             this.buildIniFilesToolStripMenuItem.Click += new System.EventHandler(this.BuildIniFilesToolStripMenuItem_Click);
             // 
             // buildKeysiniFileToolStripMenuItem
             // 
             this.buildKeysiniFileToolStripMenuItem.Name = "buildKeysiniFileToolStripMenuItem";
-            this.buildKeysiniFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.buildKeysiniFileToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.buildKeysiniFileToolStripMenuItem.Text = "Build keys.ini File";
             this.buildKeysiniFileToolStripMenuItem.Click += new System.EventHandler(this.BuildKeysiniFileToolStripMenuItem_Click);
             // 
@@ -1752,7 +1745,7 @@ namespace Swiss_Selector
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
@@ -1762,7 +1755,7 @@ namespace Swiss_Selector
             this.label29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label29.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(354, 234);
+            this.label29.Location = new System.Drawing.Point(348, 184);
             this.label29.Margin = new System.Windows.Forms.Padding(3);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(58, 13);
@@ -1802,7 +1795,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox24.Location = new System.Drawing.Point(271, 231);
+            this.comboBox24.Location = new System.Drawing.Point(267, 181);
             this.comboBox24.Name = "comboBox24";
             this.comboBox24.Size = new System.Drawing.Size(75, 21);
             this.comboBox24.TabIndex = 28;
@@ -1841,12 +1834,12 @@ namespace Swiss_Selector
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(9, 612);
+            this.textBox1.Location = new System.Drawing.Point(0, 603);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(772, 115);
+            this.textBox1.Size = new System.Drawing.Size(780, 36);
             this.textBox1.TabIndex = 11;
             this.textBox1.WordWrap = false;
             // 
@@ -1864,7 +1857,7 @@ namespace Swiss_Selector
             this.label32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label32.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(354, 431);
+            this.label32.Location = new System.Drawing.Point(345, 385);
             this.label32.Margin = new System.Windows.Forms.Padding(3);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(83, 13);
@@ -1904,7 +1897,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox25.Location = new System.Drawing.Point(271, 428);
+            this.comboBox25.Location = new System.Drawing.Point(264, 382);
             this.comboBox25.Name = "comboBox25";
             this.comboBox25.Size = new System.Drawing.Size(75, 21);
             this.comboBox25.TabIndex = 64;
@@ -1915,7 +1908,7 @@ namespace Swiss_Selector
             this.label33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label33.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(112, 431);
+            this.label33.Location = new System.Drawing.Point(112, 388);
             this.label33.Margin = new System.Windows.Forms.Padding(3);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(86, 13);
@@ -1955,7 +1948,7 @@ namespace Swiss_Selector
             "Home",
             "PageUp",
             "PageDown"});
-            this.comboBox26.Location = new System.Drawing.Point(31, 428);
+            this.comboBox26.Location = new System.Drawing.Point(31, 385);
             this.comboBox26.Name = "comboBox26";
             this.comboBox26.Size = new System.Drawing.Size(75, 21);
             this.comboBox26.TabIndex = 66;
@@ -1995,9 +1988,9 @@ namespace Swiss_Selector
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(5, 36);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(780, 574);
@@ -2051,40 +2044,6 @@ namespace Swiss_Selector
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Set Amounts";
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(772, 548);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "File Preview (ini)";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.listBox5);
-            this.groupBox3.Controls.Add(this.listBox4);
-            this.groupBox3.Location = new System.Drawing.Point(391, 6);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(375, 435);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Keys.ini";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.listBox3);
-            this.groupBox2.Controls.Add(this.listBox2);
-            this.groupBox2.Location = new System.Drawing.Point(6, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(379, 435);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Swiss.ini";
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.groupBox4);
@@ -2098,6 +2057,8 @@ namespace Swiss_Selector
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.comboBox27);
+            this.groupBox4.Controls.Add(this.label35);
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.label33);
             this.groupBox4.Controls.Add(this.label21);
@@ -2153,20 +2114,105 @@ namespace Swiss_Selector
             this.groupBox4.Controls.Add(this.comboBox4);
             this.groupBox4.Location = new System.Drawing.Point(6, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(480, 522);
+            this.groupBox4.Size = new System.Drawing.Size(480, 461);
             this.groupBox4.TabIndex = 68;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Key Bindings";
             // 
+            // comboBox27
+            // 
+            this.comboBox27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox27.FormattingEnabled = true;
+            this.comboBox27.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "0",
+            "/",
+            "*",
+            "-",
+            "+",
+            "F6",
+            "F7",
+            "F8",
+            "F9",
+            "F10",
+            "F11",
+            "End",
+            "Insert",
+            "]",
+            "[",
+            "Home",
+            "PageUp",
+            "PageDown"});
+            this.comboBox27.Location = new System.Drawing.Point(31, 331);
+            this.comboBox27.Name = "comboBox27";
+            this.comboBox27.Size = new System.Drawing.Size(75, 21);
+            this.comboBox27.TabIndex = 68;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label35.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(112, 334);
+            this.label35.Margin = new System.Windows.Forms.Padding(3);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(65, 13);
+            this.label35.TabIndex = 69;
+            this.label35.Text = "Fix This Part";
+            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.groupBox3);
+            this.tabPage4.Controls.Add(this.groupBox2);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(772, 548);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Raw ini";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.listBox5);
+            this.groupBox3.Controls.Add(this.listBox4);
+            this.groupBox3.Location = new System.Drawing.Point(391, 9);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(291, 389);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Keys.ini";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.listBox3);
+            this.groupBox2.Controls.Add(this.listBox2);
+            this.groupBox2.Location = new System.Drawing.Point(8, 9);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(377, 389);
+            this.groupBox2.TabIndex = 5;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Swiss.ini";
+            // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(669, 34);
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(669, 29);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(89, 20);
+            this.label34.Size = new System.Drawing.Size(84, 16);
             this.label34.TabIndex = 75;
-            this.label34.Text = "Version 1.6";
+            this.label34.Text = "Version 1.7";
             // 
             // Form1
             // 
@@ -2174,7 +2220,7 @@ namespace Swiss_Selector
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(790, 737);
+            this.ClientSize = new System.Drawing.Size(783, 645);
             this.Controls.Add(this.label34);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
@@ -2199,60 +2245,20 @@ namespace Swiss_Selector
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
-        //private string newSelected;
-        //private string imageLocation;
-        //private string newestKey;
-        public int checker;
-        //public List<string> mods;
-        private string currentKey;
-        private string savePath;
-        public string startPref;
-        public string startPrefPath;
-        private string ChosenPath;
-        public string dllPath;
-        //public string iniFiles;
-        public string keysPath;
-        public string swissPath;
-        public string carsPath;        
-        //public string ModCarsPath;
-        //public string ModFunction;        
-        public string IncreaseConfig;
-        public string DecreaseConfig;
-        public string RandomChangeCondition;
-        public string RandomChangeColor;
-        public string ReloadLiveries;
-        public string SetMileage;
-        public string GenerateJunkyard;
-        public string FullyRepairCar;
-        public string PhotoMode;
-        public string DuplicateEngine;
-        public string IncreaseSpeed;
-        public string DecreaseSpeed;
-        public string AddAllEngineParts;
-        public string RepairAllItems;
-        public string AddBarn;
-        public string AddMoney;
-        public string AddXP;
-        public string UnlockAllUpgrades;
-        public string OpenShop;
-        public string AddThisPart;
-        public string RotateEngineRight;
-        public string RotateEngineLeft;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem selectiniLocationToolStripMenuItem;
@@ -2326,9 +2332,7 @@ namespace Swiss_Selector
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.NumericUpDown numericUpDown6;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem advancedToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ToolStripMenuItem manuallySetCarFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buildIniFilesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buildKeysiniFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
@@ -2356,13 +2360,16 @@ namespace Swiss_Selector
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.ComboBox comboBox27;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.ToolStripMenuItem manuallySetCarFolderToolStripMenuItem;
     }
 }
 
